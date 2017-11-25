@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="web前端资料," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="那年匆匆" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="推荐文章(教程)html(5) 后HTML5时代一 后HTML5时代二 (简单粗暴，没什么废话) html5推广 匠心打造canvas签名组件 HTML5/CSS3 (汤姆大叔总结的html5和css3的新特性) HTML5动画开发快车道 移动H5前端性能优化指南 玩转HTML5移动页面 HTML5进阶系列：文件上传预">
+<meta name="keywords" content="web前端资料">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web资料整合">
+<meta property="og:url" content="http://www.gaomingwei.cc/web资料整合.html">
+<meta property="og:site_name" content="那年匆匆">
+<meta property="og:description" content="推荐文章(教程)html(5) 后HTML5时代一 后HTML5时代二 (简单粗暴，没什么废话) html5推广 匠心打造canvas签名组件 HTML5/CSS3 (汤姆大叔总结的html5和css3的新特性) HTML5动画开发快车道 移动H5前端性能优化指南 玩转HTML5移动页面 HTML5进阶系列：文件上传预下载 HTML5进阶系列：canvas动态图表 HTML5进阶系列：拖放API实">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-04T09:42:37.917Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web资料整合">
+<meta name="twitter:description" content="推荐文章(教程)html(5) 后HTML5时代一 后HTML5时代二 (简单粗暴，没什么废话) html5推广 匠心打造canvas签名组件 HTML5/CSS3 (汤姆大叔总结的html5和css3的新特性) HTML5动画开发快车道 移动H5前端性能优化指南 玩转HTML5移动页面 HTML5进阶系列：文件上传预下载 HTML5进阶系列：canvas动态图表 HTML5进阶系列：拖放API实">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'J97OMZENJ1',
+      apiKey: '10b0d9570414861e53a267610fc2042f',
+      indexName: 'nSearch',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字搜索","hits_empty":"找不到关于 「${query}」的文章","hits_stats":"共找到 ${hits} 篇文章，花了 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.gaomingwei.cc/web资料整合.html"/>
+
+
+
+
+
+  <title>web资料整合 | 那年匆匆</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bd6649ba943a76bc1c20a4be8082843d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+    <meta name="google-site-verification" content="m8bl80y4ljs5jExpyemjxy6Truq339SW_tOJih_DDnY" />
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">那年匆匆</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.gaomingwei.cc/web资料整合.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="执念">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那年匆匆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">web资料整合</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-04T17:42:11+08:00">
+                2017-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="推荐文章-教程"><a href="#推荐文章-教程" class="headerlink" title="推荐文章(教程)"></a>推荐文章(教程)</h2><h3 id="html-5"><a href="#html-5" class="headerlink" title="html(5)"></a>html(5)</h3><ul>
+<li><a href="http://tgideas.qq.com/webplat/info/news_version3/804/7104/7106/m5723/201506/354489.shtml" target="_blank" rel="noopener">后HTML5时代一</a></li>
+<li><a href="http://tgideas.qq.com/webplat/info/news_version3/804/7104/7106/m5723/201506/355023.shtml" target="_blank" rel="noopener">后HTML5时代二</a> (简单粗暴，没什么废话)</li>
+<li><a href="http://ued.ctrip.com/blog/5133.html" target="_blank" rel="noopener">html5推广</a></li>
+<li><a href="https://juejin.im/post/595f41766fb9a06bc17c2c8d" target="_blank" rel="noopener">匠心打造canvas签名组件</a></li>
+<li><a href="http://www.cnblogs.com/TomXu/category/336175.html" target="_blank" rel="noopener">HTML5/CSS3</a> (汤姆大叔总结的html5和css3的新特性)</li>
+<li><a href="https://isux.tencent.com/h5-animation-highway.html" target="_blank" rel="noopener">HTML5动画开发快车道</a></li>
+<li><a href="https://isux.tencent.com/h5-performance.html" target="_blank" rel="noopener">移动H5前端性能优化指南</a></li>
+<li><a href="http://www.tqtan.com/2015/01/31/play-with-h5/" target="_blank" rel="noopener">玩转HTML5移动页面</a></li>
+<li><a href="https://juejin.im/post/59598ecf5188250d8d141fff" target="_blank" rel="noopener">HTML5进阶系列：文件上传预下载</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/27052826" target="_blank" rel="noopener">HTML5进阶系列：canvas动态图表</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26666141" target="_blank" rel="noopener">HTML5进阶系列：拖放API实现拖放排序</a> （这个系列的文章都不错，值得大家一看）</li>
+<li><a href="https://isux.tencent.com/h5active.html" target="_blank" rel="noopener">H5动画效果的常见制作手法</a></li>
+<li><a href="https://segmentfault.com/a/1190000010638325" target="_blank" rel="noopener">超多经典canvas实例，动态粒子背景、移动炫彩小球等等….</a></li>
+<li><a href="https://isux.tencent.com/canvas-particle-animation.html" target="_blank" rel="noopener">打造高大上的canvas粒子动画效果</a></li>
+</ul>
+<h3 id="CSS-3"><a href="#CSS-3" class="headerlink" title="CSS(3)"></a>CSS(3)</h3><ul>
+<li><a href="http://www.w3cplus.com/resources/css3-tutorial-and-case" target="_blank" rel="noopener">CSS3属性教程与案例分享</a> (大漠的CSS3干货，进去里面可以逐个看，对css3的学习很有用)</li>
+<li><a href="http://www.w3cplus.com/blog/163.html" target="_blank" rel="noopener">CSS3实现11种经典的css技术</a> (大漠的CSS3经典实例干货，对css3的学习很有用)</li>
+<li><a href="http://www.w3cplus.com/w3cplusDemo/index.html" target="_blank" rel="noopener">W3cplus demo</a> (w3cplus的案例，非常好，值得一看)</li>
+<li><a href="http://www.cnblogs.com/zhuzhenwei918/p/6120294.html" target="_blank" rel="noopener">强大的Css3</a> (概括性的说明css3的新特性的一篇文章)</li>
+<li><a href="http://www.cnblogs.com/lhb25/archive/2013/01/29/css3-rgba-tutorials.html" target="_blank" rel="noopener">CSS3经典教程系列</a> (不要忘记看完这个系列，文章都不错)</li>
+<li><a href="http://www.cnblogs.com/nzbin/archive/2017/08/06/7073601.html" target="_blank" rel="noopener">如何编写轻量级CSS框架</a></li>
+<li><a href="http://caibaojian.com/css-protips.html" target="_blank" rel="noopener">21条CSS高级技巧</a></li>
+<li><a href="http://www.cnblogs.com/aaronjs/p/4744014.html" target="_blank" rel="noopener">CSS3技术-雪碧图自适应缩放与精灵图方案</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">Flex布局教程：语法篇</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">Flex布局教程：实例篇</a></li>
+<li><a href="http://web.jobbole.com/91473/" target="_blank" rel="noopener">奇妙的CSS shapes(css图形)</a></li>
+<li><a href="http://www.qdfuns.com/notes/25859/9e01e4cf0dd9b634744ff698af9fc8c1.html" target="_blank" rel="noopener">使用CSS3制作各种形状的图形（转载other）</a></li>
+<li><a href="http://web.jobbole.com/88197/" target="_blank" rel="noopener">有趣的CSS题目（1）：左边竖条的实现方法</a> (看了第一篇，可以往下面看，总会会帮助的，不过这个网站有时候加载不出图片，如果加载不出图片，放弃还是坚持，大家抓主意)</li>
+<li><a href="http://www.cnblogs.com/coco1s/p/7197662.html" target="_blank" rel="noopener">纯css实现波浪效果！</a></li>
+<li><a href="http://www.w3cplus.com/animation/check-css-animation-performance-with-the-browsers-dev-tools.html" target="_blank" rel="noopener">使用浏览器开发者检测css动画性能</a></li>
+<li><a href="http://imweb.io/topic/5643850eed18cc424277050e" target="_blank" rel="noopener">搞定这些疑难杂症，向css3动画说yes</a></li>
+<li><a href="http://yincheng.site/using-html-css-instead-of-js" target="_blank" rel="noopener">Effective前端1：能使用heml/css解决的问题就不要使用javascript</a></li>
+<li><a href="https://isux.tencent.com/native-animation.html" target="_blank" rel="noopener">如何让你的动画更加自然？</a></li>
+<li><a href="https://css-tricks.com/examples/ShapesOfCSS/" target="_blank" rel="noopener">css动画图形</a></li>
+<li><a href="https://tympanus.net/Development/CreativeLinkEffects/" target="_blank" rel="noopener">css各种鼠标效果</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/web/1202_zhouxiang_css3/" target="_blank" rel="noopener">深入了解常css3新特性</a> （也是概括性的总结，这个系列值得推荐）</li>
+<li><a href="http://www.imweb.io/topic/55e32fd5771670e207a16bb9" target="_blank" rel="noopener">前端如何呼风唤雨</a></li>
+<li><a href="http://www.qdfuns.com/notes/40906/28abf71f9486e2cd86ae803e305b39fa.html" target="_blank" rel="noopener">:after和 :before炫酷用法总结</a></li>
+<li><a href="http://web.jobbole.com/91586/" target="_blank" rel="noopener">神奇的conic-gradient圆锥渐变</a></li>
+<li><a href="http://web.jobbole.com/90964/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="noopener">10个优质的CSS与JS LOGO 动画示例</a></li>
+<li><a href="https://isux.tencent.com/emancipate-gpu.html" target="_blank" rel="noopener">被解放的GPU-提高CSS3性能</a></li>
+<li><a href="http://www.cnblogs.com/limingxi/p/3709322.html" target="_blank" rel="noopener">【项目总结】谈一谈电商网站前端css的整体架构设计（1）</a></li>
+<li><a href="http://www.cnblogs.com/limingxi/p/3710600.html" target="_blank" rel="noopener">【项目总结】谈一谈电商网站前端css的整体架构设计（2）</a></li>
+<li><a href="https://segmentfault.com/a/1190000010780991" target="_blank" rel="noopener">个人总结（css3新特性）</a></li>
+<li><a href="https://segmentfault.com/a/1190000010427231" target="_blank" rel="noopener">CSS3热身实战–过渡与动画（实现下拉，手风琴，无缝滚动）</a></li>
+<li><a href="https://segmentfault.com/a/1190000010640099" target="_blank" rel="noopener">编写自己的代码库（css3常用动画的实现）</a></li>
+</ul>
+<h3 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h3><ul>
+<li><a href="http://web.jobbole.com/91737/" target="_blank" rel="noopener">javascript核心概念归纳整理</a> (概括性的说明一些核心概念)</li>
+<li><a href="http://taobaofed.org/blog/2017/02/16/a-guide-to-api-design/" target="_blank" rel="noopener">从达标到卓越—API设计之道</a></li>
+<li><a href="http://taobaofed.org/blog/2017/03/16/javascript-functional-programing/" target="_blank" rel="noopener">我眼中的javascript函数式编程</a></li>
+<li><a href="http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html" target="_blank" rel="noopener">深入理解JavaScript系列</a> （汤姆大叔写的JavaScript系列，对学习和深入js很有用）</li>
+<li><a href="http://purplebamboo.github.io/2015/03/16/javascript-component/" target="_blank" rel="noopener">JavaScript组件优化</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&amp;mid=2651552444&amp;idx=1&amp;sn=2b0d4b47dd5f0377385b1d6390fa64b8&amp;chksm=8025ad7db752246b20f2ae2929530966d8d1c53d0210ad190aa5eda38c1302f1f3b734671325&amp;mpshare=1&amp;scene=23&amp;srcid=0809BXLS1CRKAj6CXYTasOJZ#rd" target="_blank" rel="noopener">如何写出小而清晰的函数？（JS版）</a></li>
+<li><a href="https://segmentfault.com/a/1190000009704212" target="_blank" rel="noopener">javascript对象详解: <em>proto</em> 和 prototype的区别和联系</a></li>
+<li><a href="https://segmentfault.com/a/1190000004282206" target="_blank" rel="noopener">理解javascript中面向对象（一）—原型继承</a> （这个专栏（实用至上）文章质量不错，值得留意）</li>
+<li><a href="http://www.w3cvip.com/425.html" target="_blank" rel="noopener">微前端 -javascript常用的设计模式详解</a> </li>
+<li><a href="https://segmentfault.com/a/1190000000320102" target="_blank" rel="noopener">10个你需要了解的最佳javascript开发实践</a></li>
+<li><a href="http://www.cnblogs.com/wangfupeng1988/p/4001284.html" target="_blank" rel="noopener">深入理解javascript原型和闭包系列</a></li>
+<li><a href="https://segmentfault.com/a/1190000000652749" target="_blank" rel="noopener">JavaScript学习总结（一） 基础部分</a> （这个系列的文章不错，不要忘记看完这个系列不过大家得在发文章的专栏找下这个系列的文章，因为作者在这个专栏发文不是连着发一个系列，中间也夹杂着其它文章，不过也很好找。在这专栏（trigkit4）里面，即使不是这个系列的文章，我看过其中几篇，感觉也很好，大家可以留意下）</li>
+<li><a href="https://segmentfault.com/a/1190000003932488" target="_blank" rel="noopener">JavaScript设计模式与开发实践 | 01 - 面向对象的JavaScript</a> （这个系列的教程不错，《JavaScript设计模式与开发实践》的笔记，这本书我也看过，这本书不错，作者整理总结得也不错，大家看完，收获不少）</li>
+<li><a href="https://www.zhihu.com/question/54637225/answer/140362071?utm_source=qq&amp;utm_medium=social" target="_blank" rel="noopener">JavaScript函数编程存在性能问题吗？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/5dAjzaTgbhZUpZ6w-juU8Q" target="_blank" rel="noopener">如何让JS写的更漂亮</a></li>
+<li><a href="https://juejin.im/post/5976b1ef5188250c980304c9" target="_blank" rel="noopener">JS的平凡之路 - - - 学习人气眼中的效果（上）</a></li>
+<li><a href="https://shimo.im/doc/VXqv2bxTlOUiJJqO/" target="_blank" rel="noopener">你还在用for循环大法莫？</a></li>
+<li><a href="https://segmentfault.com/a/1190000006990480" target="_blank" rel="noopener">前端模板的原理与实现</a></li>
+<li><a href="http://blog.jobbole.com/56689/" target="_blank" rel="noopener">只有20行JavaScript代码！ 手把手计教你写一个页面模板引擎</a></li>
+<li><a href="https://segmentfault.com/a/1190000010744960" target="_blank" rel="noopener">【教学篇】150行代码教你实现一个低版本MVVM库（1）– 原理篇</a></li>
+<li><a href="https://segmentfault.com/a/1190000010752076" target="_blank" rel="noopener">【教学篇】150行代码教你实现一个低版本MVVM库（2）– 代码篇</a> （可以关注这篇文章对应的专栏，写得不错，不知道作者还会不会写下一篇）</li>
+<li><a href="https://www.zhihu.com/question/19713563" target="_blank" rel="noopener">如何循序渐进、有效的学习JavaScript？</a></li>
+<li><a href="http://www.cnblogs.com/moqing/p/5665126.html" target="_blank" rel="noopener">过目不忘JS正则表达式</a></li>
+<li><a href="https://segmentfault.com/a/1190000010456158" target="_blank" rel="noopener">JavaScript进阶之深入理解数据双向绑定</a></li>
+<li><a href="https://segmentfault.com/a/1190000004847657" target="_blank" rel="noopener">利用 JavaScript 数据绑定实现一个简单的MVVM库</a></li>
+<li><a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">正则表达式30分钟入门教程</a></li>
+<li><a href="https://hijiangtao.github.io/2017/08/03/How-to-Manipulate-DOM-Effectively/" target="_blank" rel="noopener">如何监听页面 DOM 变动并高效响应</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html" target="_blank" rel="noopener">IntersectionObserver API 使用教程</a> （利用这个API可以更简单的实现图片懒加载和其它事情，性能也更高）<br>（下面三个连接，是知乎上的几个话题，里面的回答质量参差不齐，大家可以挑些高质量的回答看，绝对有帮助）</li>
+<li><a href="https://www.zhihu.com/question/27471576/answer/211014066" target="_blank" rel="noopener">作为一名前端开发人员，有哪些值的一读的js代码？</a></li>
+<li><a href="https://www.zhihu.com/question/27428135" target="_blank" rel="noopener">JavaScript有什么奇技意淫？</a></li>
+<li><a href="https://www.zhihu.com/question/38269966" target="_blank" rel="noopener">用JavaScript 可以做哪些有趣的事情？</a><br>（以下几篇是我自己的文章，前两篇主要是写js常用的一些小实例，虽然觉得跟很多大牛的文章比起来有差距，但是我觉得写得也不错，对大家也是有用，就贴上链接，最后一篇是关于我印象深刻的面试题）</li>
+<li><a href="https://segmentfault.com/a/1190000010225928" target="_blank" rel="noopener">编写自己的代码库（javascript常用实例的实现与封装）</a></li>
+<li><a href="https://segmentfault.com/a/1190000010527982" target="_blank" rel="noopener">编写自己的代码库（javascript常用实例的实现与封装–续）</a></li>
+<li><a href="https://segmentfault.com/a/1190000010114505" target="_blank" rel="noopener">让我深刻的javascript面试题</a></li>
+</ul>
+<h3 id="javascript-es6"><a href="#javascript-es6" class="headerlink" title="javascript(es6)"></a>javascript(es6)</h3><ul>
+<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">阮一峰 es6</a> (可以当做在线书籍看)</li>
+<li><a href="http://taobaofed.org/blog/2016/07/22/es6-basics/" target="_blank" rel="noopener">ES6 你可能不知道的事 - 基础篇</a></li>
+<li><a href="http://taobaofed.org/blog/2016/11/03/es6-advanced/" target="_blank" rel="noopener">ES6 你可能不知道的事 - 进阶篇</a></li>
+<li><a href="http://www.jianshu.com/p/ebfeb687eb70" target="_blank" rel="noopener">30分钟掌握ES6/ES2015核心内容</a> （简单粗暴介绍es6核心）</li>
+<li><a href="https://juejin.im/post/597724c26fb9a06bb75260e8" target="_blank" rel="noopener">八段代码彻底掌握Promise</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&amp;mid=2651226733&amp;idx=1&amp;sn=3723daf1d45a67be76be4358eca92c40&amp;chksm=bd495be98a3ed2ff8b7d630a646fab13cca6f6bafacd650f2188b41432d35ab430efa1e19d3e&amp;mpshare=1&amp;scene=23&amp;srcid=07266sd1A9P62rw0hBVxOcer#rd" target="_blank" rel="noopener">ECMAScript 6 新特性</a> （总结性描写常用的es6新特性）</li>
+</ul>
+<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><ul>
+<li><a href="http://www.cnblogs.com/aaronjs/p/3279314.html" target="_blank" rel="noopener">jQuery源码分析</a></li>
+<li><a href="http://www.cnblogs.com/zhuzhenwei918/p/6181760.html" target="_blank" rel="noopener">jQuery中100个技巧（译）</a></li>
+<li><a href="http://www.42du.cn/p/16" target="_blank" rel="noopener">者几条jQuery提升性能规则你要牢记</a></li>
+<li><a href="https://segmentfault.com/a/1190000009679758" target="_blank" rel="noopener">jQuery坑，说说哪些大家踩过的坑</a></li>
+<li><a href="https://segmentfault.com/a/1190000010063989" target="_blank" rel="noopener">jQuery学习笔记</a> （总结性说明JQuery常用的API， 也可以）</li>
+<li><a href="http://www.cnblogs.com/jesse131/p/5494590.html" target="_blank" rel="noopener">jQuery插件开发总结</a></li>
+</ul>
+<h3 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h3><ul>
+<li><a href="https://cn.vuejs.org/v2/guide/" target="_blank" rel="noopener">Vue官网</a></li>
+<li><a href="https://segmentfault.com/a/1190000008279436" target="_blank" rel="noopener">Vue2.x采坑与总结</a></li>
+<li><a href="https://www.v2ex.com/t/325312#reply1" target="_blank" rel="noopener">Vue 中你不知道但是很实用的黑科技</a></li>
+<li><a href="https://aotu.io/notes/2016/12/28/vue-clock/" target="_blank" rel="noopener">一个例子事件vue2.0与1.0的区别</a></li>
+<li><a href="http://www.jianshu.com/p/b544091c3d67" target="_blank" rel="noopener">我从未见过如此简单易懂的Vue教程</a></li>
+<li><a href="https://vuejs-tips.github.io/cheatsheet/" target="_blank" rel="noopener">vue-API 2.3 版本的API大全</a></li>
+<li><a href="https://segmentfault.com/a/1190000010813937" target="_blank" rel="noopener">Vue.js 插件开发指南</a> （从开发到发布的一个流程，实例简单易懂）</li>
+<li><a href="http://www.tuicool.com/articles/vmaiei2" target="_blank" rel="noopener">使用 Vue.js 创建的 Calendar</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26535530?utm_medium=social&amp;utm_source=qq?utm_medium=social&amp;utm_source=qq" target="_blank" rel="noopener">加薪DAY10」Vue开源项目库汇总（杂七杂八的库都有，质量当然也是有高有低，大家挑着看。）</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/25589193" target="_blank" rel="noopener">Vue.js 的实用技巧（一）(看了第一篇，别忘记剩下的)</a></li>
+<li><a href="https://github.com/zoro-web/blog/issues/2" target="_blank" rel="noopener">深入vue2.0底层思想–模板渲染 </a></li>
+<li><a href="http://www.cnblogs.com/keepfool/p/5690366.html" target="_blank" rel="noopener">Vue.js——vue-router 60分钟快速入门</a></li>
+<li><a href="http://hcysun.me/2017/03/03/Vue%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/" target="_blank" rel="noopener">Vue2.1.7源码学习</a></li>
+<li><a href="https://github.com/DMQ/mvvm" target="_blank" rel="noopener">剖析Vue实现原理 - 如何实现双向绑定mvvm</a></li>
+<li><a href="https://segmentfault.com/a/1190000009397476" target="_blank" rel="noopener">Vue.js入门（一）–MVVM框架理解</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&amp;mid=2651552436&amp;idx=2&amp;sn=837a93a7d364da7623de005d55b44c16&amp;chksm=8025ad75b7522463f5cd3b03856602b999cdf9dbb19afd501dd0e93acdd526da7f67b085d5a7&amp;mpshare=1&amp;scene=23&amp;srcid=0807Itvw3TvEVYwhGzIpxd34#rd" target="_blank" rel="noopener">Vue2 源码分析——逻辑梳理</a></li>
+<li><a href="https://segmentfault.com/a/1190000010801357" target="_blank" rel="noopener">vue快速入门的三个小实例（我自己的文章，比较基础的用法，觉得也还不错，就放上来了）</a></li>
+</ul>
+<h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><p>（下面的文章，有些是webpack1.x和2.x的，考虑到现在已经更新到3.x了，大家看时候要注意区别）</p>
+<ul>
+<li><a href="https://doc.webpack-china.org/" target="_blank" rel="noopener">webpack中文网</a></li>
+<li><a href="http://parking.zunmi.cn/?site=webpackdoc.com&amp;t=1504355800&amp;s=9cb18e98e30a30b474266b7ab8774bb8&amp;acct=144" target="_blank" rel="noopener">webpack官方文档</a></li>
+<li><a href="https://github.com/lcxfs1991/blog/issues/2" target="_blank" rel="noopener">webpack使用优化（基本篇）</a></li>
+<li><a href="http://www.tuicool.com/articles/vAbYruq" target="_blank" rel="noopener">webpack常用功能介绍</a></li>
+<li><a href="https://segmentfault.com/a/1190000005770042" target="_blank" rel="noopener">开发工具心得：如何 10 倍提高你的 Webpack 构建效率</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26710831" target="_blank" rel="noopener">Webpack 大法之 Code Splitting</a></li>
+<li><a href="https://segmentfault.com/a/1190000006843916" target="_blank" rel="noopener">webpack多页应用架构系列（一）：一步一步解决架构痛点（看了第一篇不要忘记剩下的，这个系列的文章不错）</a></li>
+</ul>
+<h3 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h3><ul>
+<li><a href="http://www.ydcss.com/archives/18" target="_blank" rel="noopener">gulp详细入门教程</a></li>
+<li><a href="http://www.cnblogs.com/2050/p/4198792.html" target="_blank" rel="noopener">前端构建工具gulp的使用介绍及技巧</a></li>
+<li><a href="http://www.gulpjs.com.cn/docs/getting-started/" target="_blank" rel="noopener">gulp入门指南</a></li>
+</ul>
+<h3 id="react"><a href="#react" class="headerlink" title="react"></a>react</h3><ul>
+<li><a href="http://www.react-cn.com/" target="_blank" rel="noopener">React中国</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html" target="_blank" rel="noopener">React 技术栈系列教程</a></li>
+<li><a href="https://segmentfault.com/a/1190000010832044" target="_blank" rel="noopener">React组件规范</a></li>
+</ul>
+<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><ul>
+<li><a href="http://backlogtool.com/git-guide/cn/" target="_blank" rel="noopener">猴子都能懂的GIT入门</a></li>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程 - 廖雪峰的官方网站</a></li>
+</ul>
+<h3 id="browsersync"><a href="#browsersync" class="headerlink" title="browsersync"></a>browsersync</h3><ul>
+<li><a href="http://www.browsersync.cn/#install" target="_blank" rel="noopener">(Browsersync中文网 - 省时的浏览器同步测试工具)</a></li>
+</ul>
+<h3 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h3><ul>
+<li><a href="https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm" target="_blank" rel="noopener">使用npm - NodeSource的绝对入门指南</a></li>
+<li><a href="https://nodesource.com/blog/the-basics-of-package-json-in-node-js-and-npm?utm_source=nodeweekly&amp;utm_medium=email" target="_blank" rel="noopener">Node.js和npm - NodeSource中的Package.json的基础知识</a></li>
+<li><a href="https://nodesource.com/blog/configuring-your-npmrc-for-an-optimal-node-js-environment" target="_blank" rel="noopener">配置.npmrc以获取最佳Node.js环境</a></li>
+</ul>
+<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><ul>
+<li><a href="https://sspai.com/post/25137" target="_blank" rel="noopener">认识与入门 Markdown</a></li>
+</ul>
+<h3 id="yoeman"><a href="#yoeman" class="headerlink" title="yoeman"></a>yoeman</h3><ul>
+<li><a href="http://www.tuicool.com/articles/FBRvIbQ" target="_blank" rel="noopener">教你从零开始搭建一款前端脚手架工具</a></li>
+</ul>
+<h3 id="lodash"><a href="#lodash" class="headerlink" title="lodash"></a>lodash</h3><ul>
+<li><a href="http://lodashjs.com/" target="_blank" rel="noopener">这是一个具有一致接口、模块化、高性能等特性的 JavaScript 工具库。</a></li>
+<li><a href="https://lodash.com/docs/4.17.4#chunk" target="_blank" rel="noopener">4.17.4版本</a></li>
+</ul>
+<h3 id="Fiddler"><a href="#Fiddler" class="headerlink" title="Fiddler"></a>Fiddler</h3><ul>
+<li><a href="http://www.telerik.com/fiddler" target="_blank" rel="noopener">官网</a></li>
+<li><a href="http://kb.cnblogs.com/page/130367/" target="_blank" rel="noopener">Fiddler教程</a></li>
+</ul>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/23162358" target="_blank" rel="noopener">分享几个日常调试方法让js调试更简单</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/24770877" target="_blank" rel="noopener">用 Chrome 调试你的 JavaScript</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/23080626" target="_blank" rel="noopener">JavaScript 中 console 的用法（看了这篇和上面一篇文章，你可能会感觉以前根本不会使用console）</a></li>
+</ul>
+<h2 id="细节，优化"><a href="#细节，优化" class="headerlink" title="细节，优化"></a>细节，优化</h2><ul>
+<li><a href="http://www.cnblogs.com/yexiaochai/p/4219523.html" target="_blank" rel="noopener">浅谈移动前端的最佳实践</a></li>
+<li><a href="http://www.cnblogs.com/yexiaochai/p/4901341.html" target="_blank" rel="noopener">前端优化带来的思考，浅谈前端工程化</a></li>
+<li><a href="https://aotu.io/notes/2016/04/12/jcloud-opt/" target="_blank" rel="noopener">前端优化实践总结</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/24495650" target="_blank" rel="noopener">减少前端代码耦合</a></li>
+<li><a href="http://www.daqianduan.com/6419.html" target="_blank" rel="noopener">判断单、多张图片加载完成</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/28091618" target="_blank" rel="noopener">终端代码重复率检测</a></li>
+<li><a href="http://www.cnblogs.com/yexiaochai/p/4876099.html" target="_blank" rel="noopener">【组件化开发】前端进阶篇之如何编写可维护可升级的代码</a></li>
+<li><a href="http://www.cnblogs.com/virtual/p/3735249.html" target="_blank" rel="noopener">作为一个web开发人员，哪些技术细节是在发布站点前你需要考虑到的</a></li>
+<li><a href="http://www.cnblogs.com/yexiaochai/p/3589837.html" target="_blank" rel="noopener">【单页应用】我们该如何处理框架弹出层层级关系？</a></li>
+<li><a href="http://www.alloyteam.com/2012/05/pick-up-templates-speed-up/" target="_blank" rel="noopener">剥离模板代码加速Web页面加载</a></li>
+<li><a href="http://tgideas.qq.com/webplat/info/news_version3/804/808/811/m579/201412/293834.shtml" target="_blank" rel="noopener">移动前端系列——移动页面性能优化</a></li>
+<li><a href="https://segmentfault.com/a/1190000005882953" target="_blank" rel="noopener">[聊一聊系列]聊一聊百度移动端首页前端速度那些事儿</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="http://www.cnblogs.com/lxxhome/p/5980615.html" target="_blank" rel="noopener">socket.io 中文手册 socket.io 中文文档</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/23467317" target="_blank" rel="noopener">WebSocket 与 Socket.IO</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26907805" target="_blank" rel="noopener">VR进化论|教你搭建通用的WebVR工程</a></li>
+<li><a href="https://zhuanlan.zhihu.com/mtdpdiancan" target="_blank" rel="noopener">RxJS 入门</a></li>
+<li><a href="https://segmentfault.com/a/1190000010880049" target="_blank" rel="noopener">deeplearn.js：浏览器端机器智能框架</a></li>
+</ul>
+<h2 id="分享和技能清单"><a href="#分享和技能清单" class="headerlink" title="分享和技能清单"></a>分享和技能清单</h2><ul>
+<li><a href="http://www.jianshu.com/p/b7f8c5564e78" target="_blank" rel="noopener">鸡年大吉！继续前行的前端周刊（第十五期）</a></li>
+<li><a href="http://collect.w3ctrain.com/" target="_blank" rel="noopener">前端收藏夹</a> （和上面那篇一样，都是别人的总结的，干货不少，但是‘前端收藏夹’，可能是资源太多了，给我的感觉也有点一股脑放资源的感觉，只要是资源，都放进去，少部分资源质量有点低，建议大家带参考思想看）</li>
+<li><a href="https://github.com/hoosin/mobile-web-favorites" target="_blank" rel="noopener">移动web干货收藏夹</a></li>
+<li><a href="https://www.awesomes.cn/" target="_blank" rel="noopener">awesomes</a> （前端一个巨大的资源库，里面的资源应有尽有）</li>
+<li><a href="http://lib.csdn.net/" target="_blank" rel="noopener">知识库</a> （拥有很多语言，框架，库的知识图谱，值得一看！能让你了解哪个语言，框架，库所包含的知识点，每一个知识点的详情讲解，也有栗子和文章，如：<a href="http://lib.csdn.net/base/javascript/structure" target="_blank" rel="noopener">javascript知识图谱</a> <a href="http://lib.csdn.net/base/html5/structure" target="_blank" rel="noopener">html5知识图谱</a> <a href="http://lib.csdn.net/base/react/structure" target="_blank" rel="noopener">react知识图谱</a> )</li>
+<li><a href="https://github.com/hacke2/hacke2.github.io/issues" target="_blank" rel="noopener">前端资源分享</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/22229868" target="_blank" rel="noopener">送给前端的你，推荐几篇前端汇总文章。 - 知乎专栏</a></li>
+<li><a href="https://github.com/darcyclarke/Front-end-Developer-Interview-Questions" target="_blank" rel="noopener">前端面试问题合集（Front-end-Developer-Interview-Questions）</a></li>
+<li><a href="https://segmentfault.com/a/1190000002804472" target="_blank" rel="noopener">github上值得关注的前端项目</a></li>
+<li><a href="https://www.douban.com/doulist/13701898/" target="_blank" rel="noopener">前端那点事儿（书列）</a></li>
+<li><a href="https://segmentfault.com/a/1190000010791103" target="_blank" rel="noopener">FPB 2.0：免费的计算机编程类中文书籍 2.0</a> （迷渡大神分享的书籍，各类图书都有，也有前端的，大家可以挑着看）</li>
+<li><a href="https://www.qcloud.com/community/article/690930001489391663?fromSource=gwzcw.58366.58366.58366" target="_blank" rel="noopener">腾讯 Web 工程师的前端书单</a></li>
+<li><a href="https://dwqs.gitbooks.io/frontenddevhandbook/content/" target="_blank" rel="noopener">前端开发者手册</a></li>
+<li><a href="https://www.docschina.org/" target="_blank" rel="noopener">印记中文-手册</a> （各种开发文档，webpack,vue,sass等）<br>（以下几个链接，不是文章，也不算问题吧，都是segmentfault官方举行的比赛，分享或者讨论的内容，在上面看大神的分享，代码，绝对有收获）</li>
+<li><a href="https://segmentfault.com/q/1010000000750825" target="_blank" rel="noopener">1024 HackGame 第四关面壁人这些题目是怎么想出来的？</a></li>
+<li><a href="https://segmentfault.com/q/1010000000689388" target="_blank" rel="noopener">把 SegmentFault 全部带回家 —— 码文章，送周边</a></li>
+<li><a href="https://segmentfault.com/q/1010000000485947" target="_blank" rel="noopener">官方送书活动第二弹 —— 增长姿势之SF喊你来谈开发</a></li>
+<li><a href="https://segmentfault.com/q/1010000000351723" target="_blank" rel="noopener">官方活动，深入浅出之SF喊你来谈开发！一起来分享一下你的开发知识？</a></li>
+<li><a href="https://segmentfault.com/q/1010000000340372/a-1020000000341378" target="_blank" rel="noopener">官方30行js比赛：30行js你能做出什么？</a></li>
+<li><a href="https://segmentfault.com/q/1010000000767310/a-1020000000767695" target="_blank" rel="noopener">【官方比赛】社区 1111 秀代码，让你来秀让你飞！</a></li>
+</ul>
+<h2 id="推荐博客"><a href="#推荐博客" class="headerlink" title="推荐博客"></a>推荐博客</h2><ul>
+<li><a href="http://taobaofed.org/" target="_blank" rel="noopener">淘宝前端团队fed</a></li>
+<li><a href="http://www.aliued.cn/" target="_blank" rel="noopener">阿里巴巴</a></li>
+<li><a href="http://fex.baidu.com/" target="_blank" rel="noopener">百度前端团队</a></li>
+<li><a href="https://75team.com/" target="_blank" rel="noopener">360奇舞团</a></li>
+<li><a href="https://t.75team.com/video" target="_blank" rel="noopener">奇舞团视频教程</a></li>
+<li><a href="https://aotu.io/" target="_blank" rel="noopener">京东设计体验部-凹凸实验室</a></li>
+<li><a href="http://qqfe.org/" target="_blank" rel="noopener">腾讯网前端研发中心</a> （暂时不能访问）</li>
+<li><a href="http://www.alloyteam.com/" target="_blank" rel="noopener">腾讯alloyteam</a></li>
+<li><a href="http://imweb.io/" target="_blank" rel="noopener">腾讯前端IMWEB团队</a></li>
+<li><a href="http://imweb.github.io/" target="_blank" rel="noopener">腾讯前端IMWEB团队-github</a></li>
+<li><a href="http://tgideas.qq.com/" target="_blank" rel="noopener">腾讯游戏</a></li>
+<li><a href="http://ued.sina.com.cn/?cat=4" target="_blank" rel="noopener">新浪UED</a></li>
+<li><a href="http://www.daqianduan.com/" target="_blank" rel="noopener">大前端（饿了么）</a><br>（上面的团队博客，值得关注，博文内容质量很高，但是就是更新不频繁，下面的更新会比较多，质量也不错）</li>
+<li><a href="http://f2e.souche.com/blog/" target="_blank" rel="noopener">搜车大无线团队博客</a></li>
+<li><a href="https://zhuanlan.zhihu.com/dreawer" target="_blank" rel="noopener">极乐科技</a></li>
+<li><a href="https://zhuanlan.zhihu.com/imweb" target="_blank" rel="noopener">IMWeb前端社区</a></li>
+<li><a href="https://zhuanlan.zhihu.com/linshuai" target="_blank" rel="noopener">爱前端-知乎专栏</a></li>
+<li><a href="https://zhuanlan.zhihu.com/jscss" target="_blank" rel="noopener">前端杂货铺</a></li>
+<li><a href="https://zhuanlan.zhihu.com/FrontendMagazine" target="_blank" rel="noopener">前端外刊评论</a></li>
+<li><a href="https://zhuanlan.zhihu.com/thinkingInFE" target="_blank" rel="noopener">前端解忧杂货铺</a></li>
+<li><a href="https://zhuanlan.zhihu.com/ddfe-weekly" target="_blank" rel="noopener">DDFE 技术周刊</a></li>
+<li><a href="https://zhuanlan.zhihu.com/qianduanzhidian" target="_blank" rel="noopener">前端之巅</a></li>
+<li><a href="http://frontenddev.org/discover/" target="_blank" rel="noopener">Fed汇总</a></li>
+</ul>
+<h2 id="大牛博客"><a href="#大牛博客" class="headerlink" title="大牛博客"></a>大牛博客</h2><ul>
+<li><a href="https://www.h5jun.com/archives/" target="_blank" rel="noopener">十年踪迹</a></li>
+<li><a href="http://www.zhangxinxu.com/" target="_blank" rel="noopener">张鑫旭</a></li>
+<li><a href="http://www.ruanyifeng.com/home.html" target="_blank" rel="noopener">阮一峰</a></li>
+<li><a href="http://www.cnblogs.com/yexiaochai/" target="_blank" rel="noopener">叶小钗</a></li>
+<li><a href="http://www.cnblogs.com/rubylouvre/" target="_blank" rel="noopener">司徒正美博客</a></li>
+<li><a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">廖雪峰</a></li>
+<li><a href="http://jiongks.name/" target="_blank" rel="noopener">勾三股四</a></li>
+<li><a href="http://www.cnblogs.com/coco1s/" target="_blank" rel="noopener">chokCoCo</a></li>
+<li><a href="https://github.com/chokcoco" target="_blank" rel="noopener">chokCoCo-github</a></li>
+</ul>
+<h2 id="书籍推荐"><a href="#书籍推荐" class="headerlink" title="书籍推荐"></a>书籍推荐</h2><p>下面这些书籍可以去网站找，有电子版的。</p>
+<p>《JavaScript高级程序设计》：（红皮书或者红宝石书）可以作为入门书籍，但同时也是高级书籍，可以快速吸收基础，等到提升再回来重新看<br>《JavaScript权威指南》：（犀牛书）可以说是js最经典的一本书了，新手看着可能会有点吃力，但是对于学js的人来说，必备的，不理解的地方就去查阅一下，很有帮助。<br>《数据结构与算法JavaScript描述》（刺猬书）<br>《编写可维护的JavaScript》（乌龟书）<br>《JavaScript DOM编程艺术 第2版》<br>《JavaScript语言精粹》（蝴蝶书）：经典的书，也是普及JavaScript的开发思维的一本书。<br>《JavaScript设计模式 》-张榕铭（百度员工写的一本书，案例生动易懂，涉及的设计模式比较全）<br>《JavaScript设计模式与开发实践》-曾琛（腾讯员工写的一本书，讲了js里面更加常用的14个设计模式）<br>《单页Web应用 JavaScript从前端到后端》<br>《<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMAScript 6 入门</a>》可以作为es6新特性文档的一本书，而且这本书开源了，直接看就好！需要的也可以购买！<br>《HTML5移动Web开发实战》<br>《HTML5移动Web开发指南》<br>《HTML5 Canvas核心技术》：对于感受canvas的魅力，使用，动画的实现，都非常有帮助。<br>《html5与css3权威指南 第三版》-陆凌牛，这本书貌似有同名的，注意作者，另外该书分上册和下册的。我当时看的是第二版，现在已经出了第三版就推荐第三版了。<br>《锋利的jquery》：我学jquery就是看这本书，这本书给我身边的同行印象不是很好，但是我感觉不错，而且我学jquery就看了这一本书，就推荐这本了！<br>《了不起的Node js 将JavaScript进行到底》<br>《css揭秘》：看了这本书，我再也不敢说自己会css了！里面很多都是你想不到的！</p>
+<h2 id="推荐社区"><a href="#推荐社区" class="headerlink" title="推荐社区"></a>推荐社区</h2><ul>
+<li><a href="https://github.com/" target="_blank" rel="noopener">github</a>：这个起初我经常在上面找资源。但是没注册账号，但是后来被老大催着注册，就去了。在里面可以阅读别人的代码，向大家学习！</li>
+<li><a href="https://segmentfault.com/" target="_blank" rel="noopener">segmentfault</a><br>知乎：虽然不是单纯的IT社区，但是里面有很多大牛和高质量的专栏！</li>
+<li><a href="https://stackoverflow.com/" target="_blank" rel="noopener">stackoverflow</a>：一个问答社区，基本上各种问题都能在上面获得解答</li>
+<li><a href="http://www.w3cplus.com/" target="_blank" rel="noopener">w3cplus</a>：一个前端学习的网站，里面的文章质量都挺不错的，特别是关于CSS(3)的</li>
+<li><a href="http://www.qdfuns.com/" target="_blank" rel="noopener">前端网</a></li>
+<li><a href="http://www.html-js.com/" target="_blank" rel="noopener">前端乱炖</a>：一个前端文章分享的社区，有很多优秀文章</li>
+<li><a href="https://toutiao.io/" target="_blank" rel="noopener">开发者头条</a></li>
+<li><a href="http://www.feweekly.com/issues" target="_blank" rel="noopener">前端周刊</a></li>
+<li><a href="http://www.html5dw.com/" target="_blank" rel="noopener">HTML5梦工场</a></li>
+<li><a href="http://www.biyeseng.cn/" target="_blank" rel="noopener">毕业僧</a></li>
+<li><a href="http://www.imooc.com/" target="_blank" rel="noopener">慕课网</a>（貌似现在很多视频收费了，以前我看的时候，基本都是免费的）</li>
+<li><a href="https://juejin.im/timeline" target="_blank" rel="noopener">稀土掘金</a></li>
+<li><a href="http://www.hubwiz.com/" target="_blank" rel="noopener">汇智网</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web前端资料/" rel="tag"># web前端资料</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Git查看、删除、重命名远程分支和tag.html" rel="next" title="(转)Git查看、删除、重命名远程分支和tag">
+                <i class="fa fa-chevron-left"></i> (转)Git查看、删除、重命名远程分支和tag
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/转-阿里前端推出新的-React-框架：Mirror.html" rel="prev" title="(转)阿里前端推出新的 React 框架：Mirror">
+                (转)阿里前端推出新的 React 框架：Mirror <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="执念" />
+          <p class="site-author-name" itemprop="name">执念</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/ || archive">
+            
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gmw-zjw" rel="external nofollow" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2961747451/home?wvr=5&lf=reg" rel="external nofollow" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/591ba0610ce463006911b9a8" rel="external nofollow" target="_blank" title="Juejin">
+                  
+                    <i class="fa fa-fw fa-juejin"></i>
+                  
+                    
+                      Juejin
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐文章-教程"><span class="nav-number">1.</span> <span class="nav-text">推荐文章(教程)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html-5"><span class="nav-number">1.1.</span> <span class="nav-text">html(5)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-3"><span class="nav-number">1.2.</span> <span class="nav-text">CSS(3)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript"><span class="nav-number">1.3.</span> <span class="nav-text">javascript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript-es6"><span class="nav-number">1.4.</span> <span class="nav-text">javascript(es6)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery"><span class="nav-number">1.5.</span> <span class="nav-text">jQuery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue"><span class="nav-number">1.6.</span> <span class="nav-text">vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack"><span class="nav-number">1.7.</span> <span class="nav-text">webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp"><span class="nav-number">1.8.</span> <span class="nav-text">gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#react"><span class="nav-number">1.9.</span> <span class="nav-text">react</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git"><span class="nav-number">1.10.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#browsersync"><span class="nav-number">1.11.</span> <span class="nav-text">browsersync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node-js"><span class="nav-number">1.12.</span> <span class="nav-text">node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown"><span class="nav-number">1.13.</span> <span class="nav-text">Markdown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yoeman"><span class="nav-number">1.14.</span> <span class="nav-text">yoeman</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lodash"><span class="nav-number">1.15.</span> <span class="nav-text">lodash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fiddler"><span class="nav-number">1.16.</span> <span class="nav-text">Fiddler</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试"><span class="nav-number">2.</span> <span class="nav-text">调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节，优化"><span class="nav-number">3.</span> <span class="nav-text">细节，优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分享和技能清单"><span class="nav-number">5.</span> <span class="nav-text">分享和技能清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐博客"><span class="nav-number">6.</span> <span class="nav-text">推荐博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大牛博客"><span class="nav-number">7.</span> <span class="nav-text">大牛博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#书籍推荐"><span class="nav-number">8.</span> <span class="nav-text">书籍推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐社区"><span class="nav-number">9.</span> <span class="nav-text">推荐社区</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">执念</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" rel="external nofollow" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143021"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.html";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 背景效果 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

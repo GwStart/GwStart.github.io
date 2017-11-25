@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="tools," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="那年匆匆" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="map详细用法： map是STL的一个关联容器，它提供一对一（其中第一个可以称为关键字，每个关键字只能在map中出现一次，第二个可能称为该关键字的值）的数据处理能力，由于这个特性，它完成有可能在我们处理一对一数据的时候，在编程上提供快速通道。这里说下map内部数据的组织，map内部自建一颗红黑树(一种非严格意义上的平衡">
+<meta name="keywords" content="tools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="map的详细用法">
+<meta property="og:url" content="http://www.gaomingwei.cc/map的详细用法.html">
+<meta property="og:site_name" content="那年匆匆">
+<meta property="og:description" content="map详细用法： map是STL的一个关联容器，它提供一对一（其中第一个可以称为关键字，每个关键字只能在map中出现一次，第二个可能称为该关键字的值）的数据处理能力，由于这个特性，它完成有可能在我们处理一对一数据的时候，在编程上提供快速通道。这里说下map内部数据的组织，map内部自建一颗红黑树(一种非严格意义上的平衡二叉树)，这颗树具有对数据自动排序的功能，所以在map内部所有的数据都是有序的，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-30T05:41:06.322Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="map的详细用法">
+<meta name="twitter:description" content="map详细用法： map是STL的一个关联容器，它提供一对一（其中第一个可以称为关键字，每个关键字只能在map中出现一次，第二个可能称为该关键字的值）的数据处理能力，由于这个特性，它完成有可能在我们处理一对一数据的时候，在编程上提供快速通道。这里说下map内部数据的组织，map内部自建一颗红黑树(一种非严格意义上的平衡二叉树)，这颗树具有对数据自动排序的功能，所以在map内部所有的数据都是有序的，">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'J97OMZENJ1',
+      apiKey: '10b0d9570414861e53a267610fc2042f',
+      indexName: 'nSearch',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字搜索","hits_empty":"找不到关于 「${query}」的文章","hits_stats":"共找到 ${hits} 篇文章，花了 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.gaomingwei.cc/map的详细用法.html"/>
+
+
+
+
+
+  <title>map的详细用法 | 那年匆匆</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bd6649ba943a76bc1c20a4be8082843d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+    <meta name="google-site-verification" content="m8bl80y4ljs5jExpyemjxy6Truq339SW_tOJih_DDnY" />
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">那年匆匆</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.gaomingwei.cc/map的详细用法.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="执念">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="那年匆匆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">map的详细用法</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T16:10:53+08:00">
+                2017-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具类/" itemprop="url" rel="index">
+                    <span itemprop="name">工具类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>map详细用法：</p>
+<p>map是STL的一个关联容器，它提供一对一（其中第一个可以称为关键字，每个关键字只能在map中出现一次，第二个可能称为该关键字的值）的数据处理能力，由于这个特性，它完成有可能在我们处理一对一数据的时候，在编程上提供快速通道。这里说下map内部数据的组织，map内部自建一颗红黑树(一种非严格意义上的平衡二叉树)，这颗树具有对数据自动排序的功能，所以在map内部所有的数据都是有序的，后边我们会见识到有序的好处。</p>
+<p>下面举例说明什么是一对一的数据映射。比如一个班级中，每个学生的学号跟他的姓名就存在着一一映射的关系，这个模型用map可能轻易描述，很明显学号用int描述，姓名用字符串描述(本篇文章中不用char *来描述字符串，而是采用STL中string来描述),下面给出map描述代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map&lt;int, string&gt; mapStudent;</span><br></pre></td></tr></table></figure>
+<h2 id="1-map的构造函数"><a href="#1-map的构造函数" class="headerlink" title="1.map的构造函数"></a>1.map的构造函数</h2><p>map共提供了6个构造函数，这块涉及到内存分配器这些东西，略过不表，在下面我们将接触到一些map的构造方法，这里要说下的就是，我们通常用如下方法构造一个map：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map&lt;int, string&gt; mapStudent;</span><br></pre></td></tr></table></figure>
+<h2 id="2-数据的插入"><a href="#2-数据的插入" class="headerlink" title="2.数据的插入"></a>2.数据的插入</h2><p>在构造map容器后，我们就可以往里面插入数据了。这里讲三种插入数据的方法：<br>第一种：用insert函数插入pair数据，下面举例说明(以下代码虽然是随手写的，应该可以在VC和GCC下编译通过，大家可以运行下看什么效果，在VC下请加入这条语句，屏蔽4786警告  #pragma warning (disable:4786) )</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; mapStudent;<span class="comment">//pair&lt;int,string&gt;p;p=make_pair(v1,v2);&lt;span style="color: rgb(255, 0, 0); background-color: rgb(240, 248, 255); font-family: Arial; font-size: 13px; "&gt; &lt;/span&gt;  </span></span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">1</span>, <span class="string">"student_one"</span>));  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">2</span>, <span class="string">"student_two"</span>));  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">3</span>, <span class="string">"student_three"</span>));  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator  iter;  </span><br><span class="line">       <span class="keyword">for</span>(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)  </span><br><span class="line">       &#123;  </span><br><span class="line">          <span class="built_in">cout</span>&lt;&lt;iter-&gt;first&lt;&lt;<span class="string">"  "</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">make_pair()//返回类型为对应的pair类型  </span><br><span class="line">无需写出类别，就可以生成一个pair对象  </span><br><span class="line">例：  </span><br><span class="line">make_pair(1,&apos;@&apos;)  </span><br><span class="line">而不必费力的写成  </span><br><span class="line">pair&lt;int ,char&gt;(1,&apos;@&apos;)</span><br></pre></td></tr></table></figure>
+<p>##第二种： 用insert函数插入value_type数据，下面举例说明</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; mapStudent;  </span><br><span class="line">       mapStudent.insert(<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::value_type (<span class="number">1</span>, <span class="string">"student_one"</span>));  </span><br><span class="line">       mapStudent.insert(<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::value_type (<span class="number">2</span>, <span class="string">"student_two"</span>));  </span><br><span class="line">       mapStudent.insert(<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::value_type (<span class="number">3</span>, <span class="string">"student_three"</span>));  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator  iter;  </span><br><span class="line">       <span class="keyword">for</span>(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)  </span><br><span class="line">       &#123;  </span><br><span class="line">           <span class="built_in">cout</span>&lt;&lt;iter-&gt;first&lt;&lt;<span class="string">" "</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第三种：用数组方式插入数据，下面举例说明"><a href="#第三种：用数组方式插入数据，下面举例说明" class="headerlink" title="第三种：用数组方式插入数据，下面举例说明"></a>第三种：用数组方式插入数据，下面举例说明</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; mapStudent;  </span><br><span class="line">       mapStudent[<span class="number">1</span>] =  <span class="string">"student_one"</span>;  </span><br><span class="line">       mapStudent[<span class="number">2</span>] =  <span class="string">"student_two"</span>;  </span><br><span class="line">       mapStudent[<span class="number">3</span>] =  <span class="string">"student_three"</span>;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator  iter;  </span><br><span class="line">       <span class="keyword">for</span>(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)  </span><br><span class="line">       &#123;  </span><br><span class="line">          <span class="built_in">cout</span>&lt;&lt;iter-&gt;first&lt;&lt;<span class="string">"   "</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上三种用法，虽然都可以实现数据的插入，但是它们是有区别的，当然了第一种和第二种在效果上是完成一样的，用insert函数插入数据，在数据的插入上涉及到集合的唯一性这个概念，即当map中有这个关键字时，insert操作是插入数据不了的，但是用数组方式就不同了，它可以覆盖以前该关键字对应的值，用程序说明</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mapStudent.insert(<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::value_type (<span class="number">1</span>, <span class="string">"student_one"</span>));</span><br><span class="line">mapStudent.insert(<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::value_type (<span class="number">1</span>, <span class="string">"student_two"</span>));</span><br></pre></td></tr></table></figure>
+<p>上面这两条语句执行后，map中1这个关键字对应的值是”student_one”，第二条语句并没有生效，那么这就涉及到我们怎么知道insert语句是否插入成功的问题了，可以用pair来获得是否插入成功，程序如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Pair&lt;<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator, <span class="keyword">bool</span>&gt; Insert_Pair;  </span><br><span class="line">Insert_Pair = mapStudent.insert(<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::value_type (<span class="number">1</span>, <span class="string">"student_one"</span>));</span><br></pre></td></tr></table></figure>
+<p>我们通过pair的第二个变量来知道是否插入成功，它的第一个变量返回的是一个map的迭代器，如果插入成功的话Insert_Pair.second应该是true的，否则为false。<br>下面给出完成代码，演示插入成功与否问题</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; mapStudent;  </span><br><span class="line">       Pair&lt;<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator, <span class="keyword">bool</span>&gt; Insert_Pair;  </span><br><span class="line">       Insert_Pair ＝ mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">1</span>, <span class="string">"student_one"</span>));  </span><br><span class="line">       If(Insert_Pair.second == <span class="literal">true</span>)  </span><br><span class="line">       &#123;  </span><br><span class="line">             <span class="built_in">cout</span>&lt;&lt;<span class="string">"Insert Successfully"</span>&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">       Else  </span><br><span class="line">       &#123;  </span><br><span class="line">              <span class="built_in">cout</span>&lt;&lt;<span class="string">"Insert Failure"</span>&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">       Insert_Pair ＝ mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">1</span>, <span class="string">"student_two"</span>));  </span><br><span class="line">       If(Insert_Pair.second == <span class="literal">true</span>)  </span><br><span class="line">       &#123;  </span><br><span class="line">              <span class="built_in">cout</span>&lt;&lt;<span class="string">"Insert Successfully"</span>&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">       Else  </span><br><span class="line">       &#123;  </span><br><span class="line">              <span class="built_in">cout</span>&lt;&lt;<span class="string">"Insert Failure"</span>&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator  iter;  </span><br><span class="line">       <span class="keyword">for</span>(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)  </span><br><span class="line">       &#123;  </span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;iter-&gt;first&lt;&lt;<span class="string">"   "</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大家可以用如下程序，看下用数组插入在数据覆盖上的效果</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; mapStudent;  </span><br><span class="line">       mapStudent[<span class="number">1</span>] =  <span class="string">"student_one"</span>;  </span><br><span class="line">       mapStudent[<span class="number">1</span>] =  <span class="string">"student_two"</span>;  </span><br><span class="line">       mapStudent[<span class="number">2</span>] =  <span class="string">"student_three"</span>;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator  iter;  </span><br><span class="line">       <span class="keyword">for</span>(iter = mapStudent.begin(); iter != mapStudent.end(); iter++)  </span><br><span class="line">       &#123;  </span><br><span class="line">          <span class="built_in">cout</span>&lt;&lt;iter-&gt;first&lt;&lt;<span class="string">"   "</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<h2 id="3-map的大小"><a href="#3-map的大小" class="headerlink" title="3.map的大小"></a>3.map的大小</h2><p>在往map里面插入了数据，我们怎么知道当前已经插入了多少数据呢，可以用size函数，用法如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> nSize = mapStudent.size();</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-数据的遍历"><a href="#4-数据的遍历" class="headerlink" title="4.数据的遍历"></a>4.数据的遍历</h2><p>这里也提供三种方法，对map进行遍<br>第一种：应用前向迭代器，上面举例程序中到处都是了，略过不表<br>第二种：应用反相迭代器，下面举例说明，要体会效果，请自个动手运行程序</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; mapStudent;  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">1</span>, <span class="string">"student_one"</span>));  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">2</span>, <span class="string">"student_two"</span>));  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">3</span>, <span class="string">"student_three"</span>));  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::reverse_iterator  iter;  </span><br><span class="line">       <span class="keyword">for</span>(iter = mapStudent.rbegin(); iter != mapStudent.rend(); iter++)  </span><br><span class="line">       &#123;  </span><br><span class="line">          <span class="built_in">cout</span>&lt;&lt;iter-&gt;first&lt;&lt;<span class="string">"   "</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第三种：用数组方式，程序说明如下"><a href="#第三种：用数组方式，程序说明如下" class="headerlink" title="第三种：用数组方式，程序说明如下"></a>第三种：用数组方式，程序说明如下</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; mapStudent;  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">1</span>, <span class="string">"student_one"</span>));  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">2</span>, <span class="string">"student_two"</span>));  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">3</span>, <span class="string">"student_three"</span>));  </span><br><span class="line">       <span class="keyword">int</span> nSize = mapStudent.size()  </span><br><span class="line"><span class="comment">//此处有误，应该是 for(int nIndex = 1; nIndex &lt;= nSize; nIndex++)   </span></span><br><span class="line"><span class="comment">//by rainfish  </span></span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> nIndex = <span class="number">0</span>; nIndex &lt; nSize; nIndex++)  </span><br><span class="line">       &#123;  </span><br><span class="line">           <span class="built_in">cout</span>&lt;&lt;mapStudent[nIndex]&lt;&lt;end;  </span><br><span class="line">       &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-数据的查找（包括判定这个关键字是否在map中出现）"><a href="#5-数据的查找（包括判定这个关键字是否在map中出现）" class="headerlink" title="5.数据的查找（包括判定这个关键字是否在map中出现）"></a>5.数据的查找（包括判定这个关键字是否在map中出现）</h2><p>在这里我们将体会，map在数据插入时保证有序的好处。<br>要判定一个数据（关键字）是否在map中出现的方法比较多，这里标题虽然是数据的查找，在这里将穿插着大量的map基本用法。<br>这里给出三种数据查找方法<br>第一种：用count函数来判定关键字是否出现，其缺点是无法定位数据出现位置,由于map的特性，一对一的映射关系，就决定了count函数的返回值只有两个，要么是0，要么是1，出现的情况，当然是返回1了<br>第二种：用find函数来定位数据出现位置，它返回的一个迭代器，当数据出现时，它返回数据所在位置的迭代器，如果map中没有要查找的数据，它返回的迭代器等于end函数返回的迭代器，程序说明</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; mapStudent;  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">1</span>, <span class="string">"student_one"</span>));  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">2</span>, <span class="string">"student_two"</span>));  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">3</span>, <span class="string">"student_three"</span>));  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator iter;  </span><br><span class="line">       iter = mapStudent.find(<span class="number">1</span>);  </span><br><span class="line">       <span class="keyword">if</span>(iter != mapStudent.end())  </span><br><span class="line">      &#123;  </span><br><span class="line">           <span class="built_in">cout</span>&lt;&lt;<span class="string">"Find, the value is "</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">       Else  </span><br><span class="line">       &#123;  </span><br><span class="line">           <span class="built_in">cout</span>&lt;&lt;<span class="string">"Do not Find"</span>&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第三种：这个方法用来判定数据是否出现，是显得笨了点，但是，我打算在这里讲解"><a href="#第三种：这个方法用来判定数据是否出现，是显得笨了点，但是，我打算在这里讲解" class="headerlink" title="第三种：这个方法用来判定数据是否出现，是显得笨了点，但是，我打算在这里讲解"></a>第三种：这个方法用来判定数据是否出现，是显得笨了点，但是，我打算在这里讲解</h2><p>Lower_bound函数用法，这个函数用来返回要查找关键字的下界(是一个迭代器)<br>Upper_bound函数用法，这个函数用来返回要查找关键字的上界(是一个迭代器)<br>例如：map中已经插入了1，2，3，4的话，如果lower_bound(2)的话，返回的2，而upper-bound（2）的话，返回的就是3<br>Equal_range函数返回一个pair，pair里面第一个变量是Lower_bound返回的迭代器，pair里面第二个迭代器是Upper_bound返回的迭代器，如果这两个迭代器相等的话，则说明map中不出现这个关键字，程序说明</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; mapStudent;  </span><br><span class="line">       mapStudent[<span class="number">1</span>] =  <span class="string">"student_one"</span>;  </span><br><span class="line">       mapStudent[<span class="number">3</span>] =  <span class="string">"student_three"</span>;  </span><br><span class="line">       mapStudent[<span class="number">5</span>] =  <span class="string">"student_five"</span>;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator  iter;  </span><br><span class="line">       iter = mapStudent.lower_bound(<span class="number">2</span>);  </span><br><span class="line">      &#123;  </span><br><span class="line">       <span class="comment">//返回的是下界3的迭代器  </span></span><br><span class="line">       <span class="built_in">cout</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">       iter = mapStudent.lower_bound(<span class="number">3</span>);  </span><br><span class="line">       &#123;  </span><br><span class="line">       <span class="comment">//返回的是下界3的迭代器  </span></span><br><span class="line">       <span class="built_in">cout</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">        iter = mapStudent.upper_bound(<span class="number">2</span>);  </span><br><span class="line">       &#123;  </span><br><span class="line">       <span class="comment">//返回的是上界3的迭代器  </span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">       iter = mapStudent.upper_bound(<span class="number">3</span>);  </span><br><span class="line">      &#123;  </span><br><span class="line">       <span class="comment">//返回的是上界5的迭代器  </span></span><br><span class="line">       <span class="built_in">cout</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">&#125;  </span><br><span class="line">      Pair&lt;<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator, <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator&gt; mapPair;  </span><br><span class="line">      mapPair = mapStudent.equal_range(<span class="number">2</span>);  </span><br><span class="line">      <span class="keyword">if</span>(mapPair.first == mapPair.second)  </span><br><span class="line">      &#123;  </span><br><span class="line">          <span class="built_in">cout</span>&lt;&lt;<span class="string">"Do not Find"</span>&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">       Else  </span><br><span class="line">       &#123;  </span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"Find"</span>&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">       mapPair = mapStudent.equal_range(<span class="number">3</span>);  </span><br><span class="line">       <span class="keyword">if</span>(mapPair.first == mapPair.second)  </span><br><span class="line">       &#123;  </span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"Do not Find"</span>&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">       Else  </span><br><span class="line">       &#123;  </span><br><span class="line">           <span class="built_in">cout</span>&lt;&lt;<span class="string">"Find"</span>&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##6.  数据的清空与判空</p>
+<p>清空map中的数据可以用clear()函数，判定map中是否有数据可以用empty()函数，它返回true则说明是空map</p>
+<h2 id="7-数据的删除"><a href="#7-数据的删除" class="headerlink" title="7.  数据的删除"></a>7.  数据的删除</h2><p>这里要用到erase函数，它有三个重载了的函数，下面在例子中详细说明它们的用法</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; mapStudent;  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">1</span>, <span class="string">"student_one"</span>));  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">2</span>, <span class="string">"student_two"</span>));  </span><br><span class="line">       mapStudent.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">3</span>, <span class="string">"student_three"</span>));  </span><br><span class="line">       <span class="comment">//如果你要演示输出效果，请选择以下的一种，你看到的效果会比较好  </span></span><br><span class="line">       <span class="comment">//如果要删除1,用迭代器删除  </span></span><br><span class="line">       <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;::iterator iter;  </span><br><span class="line">       iter = mapStudent.find(<span class="number">1</span>);  </span><br><span class="line">       mapStudent.erase(iter);  </span><br><span class="line">       <span class="comment">//如果要删除1，用关键字删除  </span></span><br><span class="line">       <span class="keyword">int</span> n = mapStudent.erase(<span class="number">1</span>);<span class="comment">//如果删除了会返回1，否则返回0  </span></span><br><span class="line">       <span class="comment">//用迭代器，成片的删除  </span></span><br><span class="line">       <span class="comment">//一下代码把整个map清空  </span></span><br><span class="line">       mapStudent.earse(mapStudent.begin(), mapStudent.end());  </span><br><span class="line">       <span class="comment">//成片删除要注意的是，也是STL的特性，删除区间是一个前闭后开的集合  </span></span><br><span class="line">     <span class="comment">//自个加上遍历代码，打印输出吧  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="8-其他一些函数用法"><a href="#8-其他一些函数用法" class="headerlink" title="8.其他一些函数用法"></a>8.其他一些函数用法</h2><p>这里有swap,key_comp,value_comp,get_allocator等函数，感觉到这些函数在编程用的不是很多，略过不表，有兴趣的话可以自个研究</p>
+<h2 id="9-排序"><a href="#9-排序" class="headerlink" title="9.排序"></a>9.排序</h2><p>这里要讲的是一点比较高深的用法了,排序问题，STL中默认是采用小于号来排序的，以上代码在排序上是不存在任何问题的，因为上面的关键字是int型，它本身支持小于号运算，在一些特殊情况，比如关键字是一个结构体，涉及到排序就会出现问题，因为它没有小于号操作，insert等函数在编译的时候过不去，下面给出两个方法解决这个问题</p>
+<h3 id="第一种：小于号重载，程序举例"><a href="#第一种：小于号重载，程序举例" class="headerlink" title="第一种：小于号重载，程序举例"></a>第一种：小于号重载，程序举例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line">uing <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line">Typedef <span class="class"><span class="keyword">struct</span> <span class="title">tagStudentInfo</span>  </span></span><br><span class="line"><span class="class">&#123;</span>  </span><br><span class="line">       <span class="keyword">int</span>      nID;  </span><br><span class="line">       String   strName;  </span><br><span class="line">&#125;StudentInfo, *PStudentInfo;  <span class="comment">//学生信息  </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="keyword">int</span> nSize;  </span><br><span class="line">       <span class="comment">//用学生信息映射分数  </span></span><br><span class="line">       <span class="built_in">map</span>&lt;StudentInfo, <span class="keyword">int</span>&gt;mapStudent;  </span><br><span class="line">       <span class="built_in">map</span>&lt;StudentInfo, <span class="keyword">int</span>&gt;::iterator iter;  </span><br><span class="line">       StudentInfo studentInfo;  </span><br><span class="line">       studentInfo.nID = <span class="number">1</span>;  </span><br><span class="line">       studentInfo.strName = <span class="string">"student_one"</span>  </span><br><span class="line">       mapStudent.insert(pair&lt;StudentInfo, <span class="keyword">int</span>&gt;(studentInfo, <span class="number">90</span>));  </span><br><span class="line">       studentInfo.nID = <span class="number">2</span>;  </span><br><span class="line">       studentInfo.strName = <span class="string">"student_two"</span>;  </span><br><span class="line">       mapStudent.insert(pair&lt;StudentInfo, <span class="keyword">int</span>&gt;(studentInfo, <span class="number">80</span>));  </span><br><span class="line">       <span class="keyword">for</span> (iter=mapStudent.begin(); iter!=mapStudent.end(); iter++)  </span><br><span class="line">         <span class="built_in">cout</span>&lt;&lt;iter-&gt;first.nID&lt;&lt;<span class="built_in">endl</span>&lt;&lt;iter-&gt;first.strName&lt;&lt;<span class="built_in">endl</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上程序是无法编译通过的，只要重载小于号，就OK了，如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Typedef <span class="class"><span class="keyword">struct</span> <span class="title">tagStudentInfo</span>  </span></span><br><span class="line"><span class="class">&#123;</span>  </span><br><span class="line">       <span class="keyword">int</span>      nID;  </span><br><span class="line">       String   strName;  </span><br><span class="line">       Bool <span class="keyword">operator</span> &lt; (tagStudentInfo <span class="keyword">const</span>&amp; _A) <span class="keyword">const</span>  </span><br><span class="line">       &#123;  </span><br><span class="line">              <span class="comment">//这个函数指定排序策略，按nID排序，如果nID相等的话，按strName排序  </span></span><br><span class="line">              If(nID &lt; _A.nID)  <span class="keyword">return</span> <span class="literal">true</span>;  </span><br><span class="line">              If(nID == _A.nID) <span class="keyword">return</span> strName.compare(_A.strName) &lt; <span class="number">0</span>;  </span><br><span class="line">              Return <span class="literal">false</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">&#125;StudentInfo, *PStudentInfo;  <span class="comment">//学生信息</span></span><br></pre></td></tr></table></figure>
+<h3 id="第二种：仿函数的应用，这个时候结构体中没有直接的小于号重载，程序说明"><a href="#第二种：仿函数的应用，这个时候结构体中没有直接的小于号重载，程序说明" class="headerlink" title="第二种：仿函数的应用，这个时候结构体中没有直接的小于号重载，程序说明"></a>第二种：仿函数的应用，这个时候结构体中没有直接的小于号重载，程序说明</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line">Typedef <span class="class"><span class="keyword">struct</span> <span class="title">tagStudentInfo</span>  </span></span><br><span class="line"><span class="class">&#123;</span>  </span><br><span class="line">       <span class="keyword">int</span>      nID;  </span><br><span class="line">       String   strName;  </span><br><span class="line">&#125;StudentInfo, *PStudentInfo;  <span class="comment">//学生信息  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sort</span>  </span></span><br><span class="line"><span class="class">&#123;</span>  </span><br><span class="line">       Public:  </span><br><span class="line">       <span class="function">Bool <span class="title">operator</span><span class="params">()</span> <span class="params">(StudentInfo <span class="keyword">const</span> &amp;_A, StudentInfo <span class="keyword">const</span> &amp;_B)</span> <span class="keyword">const</span>  </span></span><br><span class="line"><span class="function">       </span>&#123;  </span><br><span class="line">              If(_A.nID &lt; _B.nID) <span class="keyword">return</span> <span class="literal">true</span>;  </span><br><span class="line">              If(_A.nID == _B.nID) <span class="keyword">return</span> _A.strName.compare(_B.strName) &lt; <span class="number">0</span>;  </span><br><span class="line">              Return <span class="literal">false</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">&#125;;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">       <span class="comment">//用学生信息映射分数  </span></span><br><span class="line">       <span class="built_in">map</span>&lt;StudentInfo, <span class="keyword">int</span>, sort&gt;mapStudent;  </span><br><span class="line">       StudentInfo studentInfo;  </span><br><span class="line">       studentInfo.nID = <span class="number">1</span>;  </span><br><span class="line">       studentInfo.strName = <span class="string">"student_one"</span>;  </span><br><span class="line">       mapStudent.insert(pair&lt;StudentInfo, <span class="keyword">int</span>&gt;(studentInfo, <span class="number">90</span>));  </span><br><span class="line">       studentInfo.nID = <span class="number">2</span>;  </span><br><span class="line">       studentInfo.strName = <span class="string">"student_two"</span>;  </span><br><span class="line">       mapStudent.insert(pair&lt;StudentInfo, <span class="keyword">int</span>&gt;(studentInfo, <span class="number">80</span>));  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="10-另外"><a href="#10-另外" class="headerlink" title="10.另外"></a>10.另外</h2><p>由于STL是一个统一的整体，map的很多用法都和STL中其它的东西结合在一起，比如在排序上，这里默认用的是小于号，即less&lt;&gt;，如果要从大到小排序呢，这里涉及到的东西很多，在此无法一一加以说明。<br>还要说明的是，map中由于它内部有序，由红黑树保证，因此很多函数执行的时间复杂度都是log2N的，如果用map函数可以实现的功能，而STL  Algorithm也可以完成该功能，建议用map自带函数，效率高一些。<br>下面说下，map在空间上的特性，否则，估计你用起来会有时候表现的比较郁闷，由于map的每个数据对应红黑树上的一个节点，这个节点在不保存你的数据时，是占用16个字节的，一个父节点指针，左右孩子指针，还有一个枚举值（标示红黑的，相当于平衡二叉树中的平衡因子），我想大家应该知道，这些地方很费内存了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/tools/" rel="tag"># tools</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/(ubuntu)如何将本地代码上传到Github中去.html" rel="next" title="如何将本地代码上传到Github中去">
+                <i class="fa fa-chevron-left"></i> 如何将本地代码上传到Github中去
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/web-app变革之rem.html" rel="prev" title="web_app变革之rem">
+                web_app变革之rem <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="执念" />
+          <p class="site-author-name" itemprop="name">执念</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/ || archive">
+            
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gmw-zjw" rel="external nofollow" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2961747451/home?wvr=5&lf=reg" rel="external nofollow" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/591ba0610ce463006911b9a8" rel="external nofollow" target="_blank" title="Juejin">
+                  
+                    <i class="fa fa-fw fa-juejin"></i>
+                  
+                    
+                      Juejin
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-map的构造函数"><span class="nav-number">1.</span> <span class="nav-text">1.map的构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-数据的插入"><span class="nav-number">2.</span> <span class="nav-text">2.数据的插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三种：用数组方式插入数据，下面举例说明"><span class="nav-number">3.</span> <span class="nav-text">第三种：用数组方式插入数据，下面举例说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-map的大小"><span class="nav-number">4.</span> <span class="nav-text">3.map的大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-数据的遍历"><span class="nav-number">5.</span> <span class="nav-text">4.数据的遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三种：用数组方式，程序说明如下"><span class="nav-number">6.</span> <span class="nav-text">第三种：用数组方式，程序说明如下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-数据的查找（包括判定这个关键字是否在map中出现）"><span class="nav-number">7.</span> <span class="nav-text">5.数据的查找（包括判定这个关键字是否在map中出现）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三种：这个方法用来判定数据是否出现，是显得笨了点，但是，我打算在这里讲解"><span class="nav-number">8.</span> <span class="nav-text">第三种：这个方法用来判定数据是否出现，是显得笨了点，但是，我打算在这里讲解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-数据的删除"><span class="nav-number">9.</span> <span class="nav-text">7.  数据的删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-其他一些函数用法"><span class="nav-number">10.</span> <span class="nav-text">8.其他一些函数用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-排序"><span class="nav-number">11.</span> <span class="nav-text">9.排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种：小于号重载，程序举例"><span class="nav-number">11.1.</span> <span class="nav-text">第一种：小于号重载，程序举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种：仿函数的应用，这个时候结构体中没有直接的小于号重载，程序说明"><span class="nav-number">11.2.</span> <span class="nav-text">第二种：仿函数的应用，这个时候结构体中没有直接的小于号重载，程序说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-另外"><span class="nav-number">12.</span> <span class="nav-text">10.另外</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">执念</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" rel="external nofollow" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143021"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.html";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 背景效果 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
