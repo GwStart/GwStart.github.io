@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gaomingwei.cc/"/>
-  <updated>2017-11-26T02:18:21.569Z</updated>
+  <updated>2017-11-26T02:27:43.527Z</updated>
   <id>http://www.gaomingwei.cc/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.gaomingwei.cc/Angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B-Angular-cli-%E8%84%9A%E6%89%8B%E6%9E%B6%E5%B7%A5%E5%85%B7.html"/>
     <id>http://www.gaomingwei.cc/Angular学习笔记之-Angular-cli-脚手架工具.html</id>
     <published>2017-11-25T13:11:13.000Z</published>
-    <updated>2017-11-26T02:18:21.569Z</updated>
+    <updated>2017-11-26T02:27:43.527Z</updated>
     
     <content type="html"><![CDATA[<p>Angular/cli是Angular打造的脚手架工具，大大提高我们的开发效率。</p><h3 id="1-安装："><a href="#1-安装：" class="headerlink" title="1. 安装："></a>1. 安装：</h3><pre><code>首先在安装之前你的电脑必须安装 [node](https://nodejs.org/en/);全局安装angular/cli<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli</span><br></pre></td></tr></table></figure></code></pre><h3 id="2-创建新项目："><a href="#2-创建新项目：" class="headerlink" title="2.创建新项目："></a>2.创建新项目：</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new my-app</span><br></pre></td></tr></table></figure>这个命令会快速的在我们本地生成一个新的angular项目</code></pre><h3 id="3-进入改目录，启动项目"><a href="#3-进入改目录，启动项目" class="headerlink" title="3.进入改目录，启动项目"></a>3.进入改目录，启动项目</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd my-app</span><br><span class="line">ng serve --open</span><br></pre></td></tr></table></figure>ng serve 命令会启动开发服务器，监听文件的变动;打开浏览器 http://localhost:4200 既可以看到我们的新项目了。</code></pre>]]></content>
     
