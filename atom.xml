@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gaomingwei.cc/"/>
-  <updated>2017-11-26T02:29:20.924Z</updated>
+  <updated>2018-03-10T15:30:12.032Z</updated>
   <id>http://www.gaomingwei.cc/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript自动化测试工具Jasmine</title>
+    <link href="http://www.gaomingwei.cc/javascript%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7Jasmine.html"/>
+    <id>http://www.gaomingwei.cc/javascript自动化测试工具Jasmine.html</id>
+    <published>2018-03-10T15:30:12.000Z</published>
+    <updated>2018-03-10T15:30:12.032Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Angular学习笔记之(Angular/cli)脚手架工具</title>
@@ -511,32 +525,6 @@
     
     
       <category term="前端面试" scheme="http://www.gaomingwei.cc/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小程序开发指南(四)</title>
-    <link href="http://www.gaomingwei.cc/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97-%E5%9B%9B.html"/>
-    <id>http://www.gaomingwei.cc/小程序开发指南-四.html</id>
-    <published>2017-08-28T06:34:33.000Z</published>
-    <updated>2017-08-30T05:37:17.128Z</updated>
-    
-    <content type="html"><![CDATA[<p>问：<br>什么是模块化？<br>模块化怎么用？<br>模块化的优势在哪里？</p><p>答：<br>模块化 （MVC）即 model view controller<br>我们讲一些公共的代码抽离出来，写在一个独立的js文件中，形成模块；<br>模块只有通过 module.exports 或 exports 才能对外暴露接口；<br>一般我们会用module.exports 对外暴露接口<br>小程序目前不支持 直接引入 node_modules 现在需要我们手动去添加node_modules支持文件；</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;问：&lt;br&gt;什么是模块化？&lt;br&gt;模块化怎么用？&lt;br&gt;模块化的优势在哪里？&lt;/p&gt;
-&lt;p&gt;答：&lt;br&gt;模块化 （MVC）即 model view controller&lt;br&gt;我们讲一些公共的代码抽离出来，写在一个独立的js文件中，形成模块；&lt;br&gt;模块只有通过 modul
-      
-    
-    </summary>
-    
-      <category term="小程序开发指南" scheme="http://www.gaomingwei.cc/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/"/>
-    
-    
-      <category term="小程序" scheme="http://www.gaomingwei.cc/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   

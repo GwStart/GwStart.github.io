@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="小程序," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -97,18 +97,14 @@
 
 
 
-<meta name="description" content="问：什么是模块化？模块化怎么用？模块化的优势在哪里？ 答：模块化 （MVC）即 model view controller我们讲一些公共的代码抽离出来，写在一个独立的js文件中，形成模块；模块只有通过 module.exports 或 exports 才能对外暴露接口；一般我们会用module.exports 对外暴露接口小程序目前不支持 直接引入 node_modules 现在需要我们手动去添加">
-<meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序开发指南(四)">
-<meta property="og:url" content="http://www.gaomingwei.cc/小程序开发指南-四.html">
+<meta property="og:title" content="javascript自动化测试工具Jasmine">
+<meta property="og:url" content="http://www.gaomingwei.cc/javascript自动化测试工具Jasmine.html">
 <meta property="og:site_name" content="那年匆匆">
-<meta property="og:description" content="问：什么是模块化？模块化怎么用？模块化的优势在哪里？ 答：模块化 （MVC）即 model view controller我们讲一些公共的代码抽离出来，写在一个独立的js文件中，形成模块；模块只有通过 module.exports 或 exports 才能对外暴露接口；一般我们会用module.exports 对外暴露接口小程序目前不支持 直接引入 node_modules 现在需要我们手动去添加">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-30T05:37:17.128Z">
+<meta property="og:updated_time" content="2018-03-10T15:30:12.032Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小程序开发指南(四)">
-<meta name="twitter:description" content="问：什么是模块化？模块化怎么用？模块化的优势在哪里？ 答：模块化 （MVC）即 model view controller我们讲一些公共的代码抽离出来，写在一个独立的js文件中，形成模块；模块只有通过 module.exports 或 exports 才能对外暴露接口；一般我们会用module.exports 对外暴露接口小程序目前不支持 直接引入 node_modules 现在需要我们手动去添加">
+<meta name="twitter:title" content="javascript自动化测试工具Jasmine">
 
 
 
@@ -138,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://www.gaomingwei.cc/小程序开发指南-四.html"/>
+  <link rel="canonical" href="http://www.gaomingwei.cc/javascript自动化测试工具Jasmine.html"/>
 
 
 
 
 
-  <title>小程序开发指南(四) | 那年匆匆</title>
+  <title>javascript自动化测试工具Jasmine | 那年匆匆</title>
   
 
 
@@ -329,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.gaomingwei.cc/小程序开发指南-四.html">
+    <link itemprop="mainEntityOfPage" href="http://www.gaomingwei.cc/javascript自动化测试工具Jasmine.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="执念">
@@ -346,7 +342,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">小程序开发指南(四)</h2>
+          <h2 class="post-title" itemprop="name headline">javascript自动化测试工具Jasmine</h2>
         
 
         <div class="post-meta">
@@ -358,8 +354,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-28T14:34:33+08:00">
-                2017-08-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T23:30:12+08:00">
+                2018-03-10
               </time>
             
 
@@ -368,28 +364,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/小程序开发指南/" itemprop="url" rel="index">
-                    <span itemprop="name">小程序开发指南</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -423,9 +397,7 @@
       
 
       
-        <p>问：<br>什么是模块化？<br>模块化怎么用？<br>模块化的优势在哪里？</p>
-<p>答：<br>模块化 （MVC）即 model view controller<br>我们讲一些公共的代码抽离出来，写在一个独立的js文件中，形成模块；<br>模块只有通过 module.exports 或 exports 才能对外暴露接口；<br>一般我们会用module.exports 对外暴露接口<br>小程序目前不支持 直接引入 node_modules 现在需要我们手动去添加node_modules支持文件；</p>
-
+        
       
     </div>
     
@@ -440,12 +412,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/小程序/" rel="tag"># 小程序</a>
-          
-        </div>
-      
 
       
       
@@ -455,8 +421,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/小程序开发指南-三.html" rel="next" title="小程序开发指南(三)">
-                <i class="fa fa-chevron-left"></i> 小程序开发指南(三)
+              <a href="/Angular学习笔记之-Angular-cli-脚手架工具.html" rel="next" title="Angular学习笔记之(Angular/cli)脚手架工具">
+                <i class="fa fa-chevron-left"></i> Angular学习笔记之(Angular/cli)脚手架工具
               </a>
             
           </div>
@@ -464,10 +430,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/谈谈前端面试问题.html" rel="prev" title="谈谈前端面试问题">
-                谈谈前端面试问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
