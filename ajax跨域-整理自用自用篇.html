@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="那年匆匆">
 <meta property="og:description" content="最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正… 关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域 先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’ CORS请求原理 CORS是一个W3C标准，全称是”跨域资源共享">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T00:57:00.085Z">
+<meta property="og:updated_time" content="2018-03-11T01:01:04.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax跨域,整理自用自用篇">
 <meta name="twitter:description" content="最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正… 关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域 先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’ CORS请求原理 CORS是一个W3C标准，全称是”跨域资源共享">
@@ -432,22 +432,24 @@ Content-Type(只限于三个值 application/x-www-form-urlencoded、 multipart/f
 <li>出现No ‘Access-Control-Allow-Origin’ header is present on the requested resource,并且status 200</li>
 </ol>
 <p>出现这中情况的原因</p>
-<p>服务器端后台允许OPTIONS请求,并且接口也允许OPTIONS请求,但是头部匹配时出现不匹配现象<br>比如origin头部检查不匹配,比如少了一些头部的支持(如常见的X-Requested-With头部),然后服务端就会将response返回给前端,前端检测到这个后就触发XHR.onerror,导致前端控制台报错</p>
-<p>解决方案</p>
-<p>后端增加对应的头部支持</p>
-<ol>
+<pre><code>服务器端后台允许OPTIONS请求,并且接口也允许OPTIONS请求,但是头部匹配时出现不匹配现象
+比如origin头部检查不匹配,比如少了一些头部的支持(如常见的X-Requested-With头部),然后服务端就会将response返回给前端,前端检测到这个后就触发XHR.onerror,导致前端控制台报错
+</code></pre><p>解决方案</p>
+<pre><code>后端增加对应的头部支持
+</code></pre><ol>
 <li>出现 heade contains multiple values ‘<em>,</em>‘</li>
 </ol>
 <p>出现这种情况的原因</p>
-<p>后台响应的http头部信息有两个Access-Control-Allow-Origin:*</p>
-<p>常见于.net后台(一般在web.config中配置了一次origin,然后代码中又手动添加了一次origin(比如代码手动设置了返回*))</p>
-<p>常见于.net后台(在IIS和项目的webconfig中同时设置Origin:*)</p>
-<p>解决方案</p>
-<p>建议删除代码中手动添加的<em>，只用项目配置中的即可<br>建议删除IIS下的配置</em>，只用项目配置中的即可</p>
-<p>如何解决Ajax跨域</p>
-<p>一般ajax跨域解决是通过JSONP或CORS</p>
-<p>JSONP解决跨域</p>
-<p>JSONP之所以能够用来解决跨域方案,主要是因为 <script> 脚本拥有跨域能力,而JSONP正是利用这一点来实现，JSONP只支持GET请求</p>
+<pre><code>后台响应的http头部信息有两个Access-Control-Allow-Origin:*
+
+常见于.net后台(一般在web.config中配置了一次origin,然后代码中又手动添加了一次origin(比如代码手动设置了返回*))
+
+常见于.net后台(在IIS和项目的webconfig中同时设置Origin:*)
+</code></pre><p>解决方案</p>
+<pre><code>建议删除代码中手动添加的*，只用项目配置中的即可
+建议删除IIS下的配置*，只用项目配置中的即可
+</code></pre><p>如何解决Ajax跨域 一般ajax跨域解决是通过JSONP或CORS</p>
+<p>JSONP解决跨域<br>JSONP之所以能够用来解决跨域方案,主要是因为 <script> 脚本拥有跨域能力,而JSONP正是利用这一点来实现，JSONP只支持GET请求</p>
 <p>实现流程</p>
 <pre><code>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function addScriptTag(src) &#123;</span><br><span class="line">  var script = document.createElement(&apos;script&apos;);</span><br><span class="line">  script.setAttribute(&quot;type&quot;,&quot;text/javascript&quot;);</span><br><span class="line">  script.src = src;</span><br><span class="line">  document.body.appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">window.onload = function () &#123;</span><br><span class="line">  addScriptTag(&apos;http://example.com/ip?callback=foo&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function foo(data) &#123;</span><br><span class="line">  console.log(&apos;response data: &apos; + JSON.stringify(data));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
