@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.gaomingwei.cc/tags/index.html</loc>
+    
+    <lastmod>2018-03-11T10:17:35.242Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.gaomingwei.cc/about/index.html</loc>
     
     <lastmod>2018-03-11T10:15:21.998Z</lastmod>
@@ -159,13 +166,6 @@
     <loc>http://www.gaomingwei.cc/categories/index.html</loc>
     
     <lastmod>2017-08-30T05:52:03.988Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.gaomingwei.cc/tags/index.html</loc>
-    
-    <lastmod>2017-08-30T05:44:00.939Z</lastmod>
     
   </url>
   
