@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="那年匆匆">
 <meta property="og:description" content="Promise是异步编程的一种解决方案，是ES6引进的。 所谓的(Promise)，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。 Promise有两个特性    1.对象的状态不受外界所干扰 pending,fulfi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T05:18:07.000Z">
+<meta property="og:updated_time" content="2018-03-11T05:53:12.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习笔记(一)Promise">
 <meta name="twitter:description" content="Promise是异步编程的一种解决方案，是ES6引进的。 所谓的(Promise)，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。 Promise有两个特性    1.对象的状态不受外界所干扰 pending,fulfi">
@@ -445,11 +445,34 @@ new Promise((resolve, reject) =&gt; {
     &lt;!-- 后面的代码将不会在执行 --&gt;
     console.log(2);
 }); 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Promise.prototype.then()</span><br><span class="line"></span><br><span class="line">    Promise具有then方法， 其实是定义在原型上的Promise.prototype.then(), 也就是说then接受两个参数</span><br><span class="line">    resolved/rejected(状态的回调函数), then返回一个全新的Promise实例，可以采用链式调用的方式</span><br><span class="line"></span><br><span class="line">Promise.prototype.catch()</span><br><span class="line"></span><br><span class="line">    他的作用是在Promise中发生错误的回调函数等价于then(null, rejrcted)</span><br></pre></td></tr></table></figure>
+
+new Promise((resolve, reject) =&gt; {
+    resolve(data);
+}).catch(e =&gt; {
+    console.log(e);
+})
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    Promise 中错误是向后传递的,直到遇到最后一个catch时捕获异常错误    </span><br><span class="line">    Promise 中的错误不会导致整个代码垮掉，通俗来讲就是Promise会吃掉异常错误</span><br><span class="line"></span><br><span class="line">Promise.prototype.finally()</span><br><span class="line"></span><br><span class="line">    finally就像是try/catch里面的finally一样,不管里面代码如何,在finally都会执行</span><br></pre></td></tr></table></figure>
+
+server.listen(port)
+    .then(function() {
+        &lt;!-- ... --&gt;
+    })
+    &lt;!--不管之前是否由异常 这里的代码会照样执行 --&gt;
+    .finally(server.stop) 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+
+&lt;!-- finally返回的值总是原来的值 --&gt;
+    Promise.prototype.finally = function(callback) {
+        let P = this.constructor;
+        return this.then(
+            value  =&gt; P.resolve(callback()).then(() =&gt; value),
+            reason =&gt; P.resolve(callback()).then(() =&gt; { throw reason })
+        )
+    }
 ```
-</code></pre><p>Promise.prototype.then()</p>
-<pre><code>Promise具有then方法， 其实是定义在原型上的Promise.prototype.then(), 也就是说then接受两个参数
-resolved/rejected(状态的回调函数), then返回一个全新的Promise实例，可以采用链式调用的方式
-</code></pre>
+</code></pre><p>Promise.all()</p>
+
       
     </div>
     
