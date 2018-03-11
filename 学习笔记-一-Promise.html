@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="那年匆匆">
 <meta property="og:description" content="Promise是异步编程的一种解决方案，是ES6引进的。 所谓的(Promise)，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。 Promise有两个特性    1.对象的状态不受外界所干扰 pending,fulfi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T04:51:12.609Z">
+<meta property="og:updated_time" content="2018-03-11T05:18:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习笔记(一)Promise">
 <meta name="twitter:description" content="Promise是异步编程的一种解决方案，是ES6引进的。 所谓的(Promise)，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。 Promise有两个特性    1.对象的状态不受外界所干扰 pending,fulfi">
@@ -407,14 +407,7 @@
 <p>Promise缺点<br>    无法取消Promise状态， 一旦建立就会立即执行，无法中途取消，如果不设置回调函数， Promise内部错误无法传到外部</p>
 <p>实例<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const Promise = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    if (resolve) &#123;</span><br><span class="line">        resolve(data);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        reject(err);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(value =&gt; &#123;</span><br><span class="line">    // ...</span><br><span class="line">&#125;, (error) =&gt; &#123;</span><br><span class="line">    consloe.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>异步加载图片<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    function loadIamgeArray(url) &#123;</span><br><span class="line">        return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">            const image = new Image();</span><br><span class="line"></span><br><span class="line">            image.onload = function() &#123;</span><br><span class="line">                resolve(image);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            image.onerror = function() &#123;</span><br><span class="line">                reject(new Error(&apos;Error&apos; + Error));</span><br><span class="line">            &#125;</span><br><span class="line">            image.src = url;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    ```    </span><br><span class="line">使用Promise对Ajax封装</span><br></pre></td></tr></table></figure></p>
-<pre><code>    getJSON是对XMLHttpRequest的封装， 发出一个json的http请求， 当请求成功是返回
-
-    resolve， 当请求失败时返回reject
-
-
-
-
-const getJSON = function(url) {
+<pre><code>const getJSON = function(url) {
     const promise = new Promise((resove, reject) =&gt; {
         const handlert = function() {
             if (this.readyState !==4) {
@@ -444,7 +437,18 @@ getJSON(&apos;/posts.json&apos;).then(function() {
     console.log(&apos;error&apos;, error);
 })
 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">getJSON是对XMLHttpRequest的封装， 发出一个json的http请求， 当请求成功是返回</span><br><span class="line">resolve， 当请求失败时返回reject</span><br><span class="line"></span><br><span class="line">一般来说， 调用resolve或reject后Promise的使命就会完成， 后面的事情就会放在then上面去， 所以我们通常在resolve前添加return</span><br></pre></td></tr></table></figure>
+
+new Promise((resolve, reject) =&gt; {
+    return resolve(1);
+
+    &lt;!-- 后面的代码将不会在执行 --&gt;
+    console.log(2);
+}); 
 ```
+</code></pre><p>Promise.prototype.then()</p>
+<pre><code>Promise具有then方法， 其实是定义在原型上的Promise.prototype.then(), 也就是说then接受两个参数
+resolved/rejected(状态的回调函数), then返回一个全新的Promise实例，可以采用链式调用的方式
 </code></pre>
       
     </div>
