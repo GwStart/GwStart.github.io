@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gaomingwei.cc/"/>
-  <updated>2018-03-11T07:03:26.215Z</updated>
+  <updated>2018-03-11T09:43:35.036Z</updated>
   <id>http://www.gaomingwei.cc/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>转载Promise/A+规范</title>
+    <link href="http://www.gaomingwei.cc/%E8%BD%AC%E8%BD%BDPromise-A-%E8%A7%84%E8%8C%83.html"/>
+    <id>http://www.gaomingwei.cc/转载Promise-A-规范.html</id>
+    <published>2018-03-11T09:43:34.000Z</published>
+    <updated>2018-03-11T09:43:35.036Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>学习笔记(一)Promise</title>
@@ -45,16 +59,17 @@
     <link href="http://www.gaomingwei.cc/%E4%BD%BF%E7%94%A8Digitalocean%E6%90%AD%E5%BB%BASS%E5%B9%B6%E4%BD%BF%E7%94%A8BBR%E5%8A%A0%E9%80%9F.html"/>
     <id>http://www.gaomingwei.cc/使用Digitalocean搭建SS并使用BBR加速.html</id>
     <published>2018-03-11T03:56:07.000Z</published>
-    <updated>2018-03-11T03:56:40.548Z</updated>
+    <updated>2018-03-11T10:12:50.985Z</updated>
     
-    <content type="html"><![CDATA[<p>待更新…</p>]]></content>
+    <content type="html"><![CDATA[<p>服务器: ubuntu 14.01 64<br>本地电脑: ubuntu 16.04 64</p><p>首先我自己本想着买vpn, 但是作为技术出身的我来讲，靠人不如靠己，自己动手风衣足食。</p><p>首先我我选择的是<a href="https://m.do.co/c/840245be0086" target="_blank" rel="noopener">Digtailocean</a>进去注册，我选</p><p>择的是每个月5$的, 系统选用的是ubuntu 14.01 64位， 至此我们的服务器搞定。</p><p>首先我们在本地 【 Crt+Shift + T 】打开本地终端, 链接服务器 [ssh -t root@公网ip地址 -p 22]</p><p>首先我们修改服务器密码, 主要 默认密码会发送到你填写的邮箱，刚开始要输入两次密码， 有点变态 OK<br>修改号密码之后就登录成功了，接下来就是安装ss环境了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install python-gevent python-pip python-m2crypto python-wheel python-setuptools</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure><p>安装好之后就是修改配置文件了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &apos;server&apos;: &apos;your ip&apos;,</span><br><span class="line">    &apos;server_port&apos;: 8083,</span><br><span class="line">    &apos;local_address&apos;: &apos;127.0.0.1&apos;,</span><br><span class="line">    &apos;local_port&apos;: 1080,</span><br><span class="line">    &apos;password&apos;: &apos;密码&apos;,</span><br><span class="line">    &apos;timeout&apos;: 300,</span><br><span class="line">    &apos;method&apos;: &apos;aes-256-cfb&apos;,</span><br><span class="line">    &apos;fast-open&apos;: false</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>至此位置,配置文件已搞定, 接下来该开启服务了。</p><p>ssserver -c /etc/shadowsols.json -d start    </p><p>搞定！</p><p>接下来，开始安装<a href="https://github.com/google/bbr" target="_blank" rel="noopener">BBR</a>谷歌的黑科技，服务端加速。<a href="https://teddysun.com/489.html" target="_blank" rel="noopener">这里由详细教程</a>。</p><p>OK，搞定。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;待更新…&lt;/p&gt;
-
+        &lt;p&gt;服务器: ubuntu 14.01 64&lt;br&gt;本地电脑: ubuntu 16.04 64&lt;/p&gt;
+&lt;p&gt;首先我自己本想着买vpn, 但是作为技术出身的我来讲，靠人不如靠己，自己动手风衣足食。&lt;/p&gt;
+&lt;p&gt;首先我我选择的是&lt;a href=&quot;https://m.do.co/
       
     
     </summary>
@@ -492,33 +507,6 @@
       <category term="hexo" scheme="http://www.gaomingwei.cc/tags/hexo/"/>
     
       <category term="美化" scheme="http://www.gaomingwei.cc/tags/%E7%BE%8E%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sublime快捷键</title>
-    <link href="http://www.gaomingwei.cc/sublime%E5%BF%AB%E6%8D%B7%E9%94%AE.html"/>
-    <id>http://www.gaomingwei.cc/sublime快捷键.html</id>
-    <published>2017-08-30T02:28:33.000Z</published>
-    <updated>2017-08-30T05:42:18.222Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Sublime-Text-3-快捷键精华版"><a href="#Sublime-Text-3-快捷键精华版" class="headerlink" title="Sublime Text 3 快捷键精华版"></a>Sublime Text 3 快捷键精华版</h2><p>Ctrl+Shift+P：打开命令面板<br>Ctrl+P：搜索项目中的文件<br>Ctrl+G：跳转到第几行<br>Ctrl+W：关闭当前打开文件<br>Ctrl+Shift+W：关闭所有打开文件<br>Ctrl+Shift+V：粘贴并格式化<br>Ctrl+D：选择单词，重复可增加选择下一个相同的单词<br>Ctrl+L：选择行，重复可依次增加选择下一行<br>Ctrl+Shift+L：选择多行<br>Ctrl+Shift+Enter：在当前行前插入新行<br>Ctrl+X：删除当前行<br>Ctrl+M：跳转到对应括号<br>Ctrl+U：软撤销，撤销光标位置<br>Ctrl+J：选择标签内容<br>Ctrl+F：查找内容<br>Ctrl+Shift+F：查找并替换<br>Ctrl+H：替换<br>Ctrl+R：前往 method<br>Ctrl+N：新建窗口<br>Ctrl+K+B：开关侧栏<br>Ctrl+Shift+M：选中当前括号内容，重复可选着括号本身<br>Ctrl+F2：设置/删除标记<br>Ctrl+/：注释当前行<br>Ctrl+Shift+/：当前位置插入注释<br>Ctrl+Alt+/：块注释，并Focus到首行，写注释说明用的<br>Ctrl+Shift+A：选择当前标签前后，修改标签用的<br>F11：全屏<br>Shift+F11：全屏免打扰模式，只编辑当前文件<br>Alt+F3：选择所有相同的词<br>Alt+.：闭合标签<br>Alt+Shift+数字：分屏显示<br>Alt+数字：切换打开第N个文件<br>Shift+右键拖动：光标多不，用来更改或插入列内容<br>鼠标的前进后退键可切换Tab文件<br>按Ctrl，依次点击或选取，可需要编辑的多个位置<br>按Ctrl+Shift+上下键，可替换行</p><h2 id="选择类"><a href="#选择类" class="headerlink" title="选择类"></a>选择类</h2><p>Ctrl+D 选中光标所占的文本，继续操作则会选中下一个相同的文本。<br>Alt+F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中并更改所有相同的变量名、函数名等。<br>Ctrl+L 选中整行，继续操作则继续选择下一行，效果和 Shift+↓ 效果一样。<br>Ctrl+Shift+L 先选中多行，再按下快捷键，会在每行行尾插入光标，即可同时编辑这些行。<br>Ctrl+Shift+M 选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。<br>Ctrl+M 光标移动至括号内结束或开始的位置。<br>Ctrl+Enter 在下一行插入新行。举个栗子：即使光标不在行尾，也能快速向下插入一行。<br>Ctrl+Shift+Enter 在上一行插入新行。举个栗子：即使光标不在行首，也能快速向上插入一行。<br>Ctrl+Shift+[ 选中代码，按下快捷键，折叠代码。<br>Ctrl+Shift+] 选中代码，按下快捷键，展开代码。<br>Ctrl+K+0 展开所有折叠代码。<br>Ctrl+← 向左单位性地移动光标，快速移动光标。<br>Ctrl+→ 向右单位性地移动光标，快速移动光标。<br>shift+↑ 向上选中多行。<br>shift+↓ 向下选中多行。<br>Shift+← 向左选中文本。<br>Shift+→ 向右选中文本。<br>Ctrl+Shift+← 向左单位性地选中文本。<br>Ctrl+Shift+→ 向右单位性地选中文本。<br>Ctrl+Shift+↑ 将光标所在行和上一行代码互换（将光标所在行插入到上一行之前）。<br>Ctrl+Shift+↓ 将光标所在行和下一行代码互换（将光标所在行插入到下一行之后）。<br>Ctrl+Alt+↑ 向上添加多行光标，可同时编辑多行。<br>Ctrl+Alt+↓ 向下添加多行光标，可同时编辑多行。</p><h2 id="编辑类"><a href="#编辑类" class="headerlink" title="编辑类"></a>编辑类</h2><p>Ctrl+J 合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。<br>Ctrl+Shift+D 复制光标所在整行，插入到下一行。<br>Tab 向右缩进。<br>Shift+Tab 向左缩进。<br>Ctrl+K+K 从光标处开始删除代码至行尾。<br>Ctrl+Shift+K 删除整行。<br>Ctrl+/ 注释单行。<br>Ctrl+Shift+/ 注释多行。<br>Ctrl+K+U 转换大写。<br>Ctrl+K+L 转换小写。<br>Ctrl+Z 撤销。<br>Ctrl+Y 恢复撤销。<br>Ctrl+U 软撤销，感觉和 Gtrl+Z 一样。<br>Ctrl+F2 设置书签<br>Ctrl+T 左右字母互换。<br>F6 单词检测拼写</p><h2 id="搜索类"><a href="#搜索类" class="headerlink" title="搜索类"></a>搜索类</h2><p>Ctrl+F 打开底部搜索框，查找关键字。<br>Ctrl+shift+F 在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找，略高端，未研究。<br>Ctrl+P 打开搜索框。举个栗子：1、输入当前项目中的文件名，快速搜索文件，2、输入@和关键字，查找文件中函数名，3、输入：和数字，跳转到文件中该行代码，4、输入#和关键字，查找变量名。<br>Ctrl+G 打开搜索框，自动带：，输入数字跳转到该行代码。举个栗子：在页面代码比较长的文件中快速定位。<br>Ctrl+R 打开搜索框，自动带@，输入关键字，查找文件中的函数名。举个栗子：在函数较多的页面快速查找某个函数。<br>Ctrl+： 打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。<br>Ctrl+Shift+P 打开命令框。场景栗子：打开命名框，输入关键字，调用sublime text或插件的功能，例如使用package安装插件。<br>Esc 退出光标多行选择，退出搜索框，命令框等。</p><h2 id="显示类"><a href="#显示类" class="headerlink" title="显示类"></a>显示类</h2><p>Ctrl+Tab 按文件浏览过的顺序，切换当前窗口的标签页。<br>Ctrl+PageDown 向左切换当前窗口的标签页。<br>Ctrl+PageUp 向右切换当前窗口的标签页。<br>Alt+Shift+1 窗口分屏，恢复默认1屏（非小键盘的数字）<br>Alt+Shift+2 左右分屏-2列<br>Alt+Shift+3 左右分屏-3列<br>Alt+Shift+4 左右分屏-4列<br>Alt+Shift+5 等分4屏<br>Alt+Shift+8 垂直分屏-2屏<br>Alt+Shift+9 垂直分屏-3屏<br>Ctrl+K+B 开启/关闭侧边栏。<br>F11 全屏模式<br>Shift+F11 免打扰模式</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Sublime-Text-3-快捷键精华版&quot;&gt;&lt;a href=&quot;#Sublime-Text-3-快捷键精华版&quot; class=&quot;headerlink&quot; title=&quot;Sublime Text 3 快捷键精华版&quot;&gt;&lt;/a&gt;Sublime Text 3 快捷键精华版&lt;/
-      
-    
-    </summary>
-    
-      <category term="工具类" scheme="http://www.gaomingwei.cc/categories/%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
-    
-    
-      <category term="tools" scheme="http://www.gaomingwei.cc/tags/tools/"/>
-    
-      <category term="sublime" scheme="http://www.gaomingwei.cc/tags/sublime/"/>
     
   </entry>
   
