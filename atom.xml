@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gaomingwei.cc/"/>
-  <updated>2018-03-11T00:18:27.741Z</updated>
+  <updated>2018-03-11T00:19:14.736Z</updated>
   <id>http://www.gaomingwei.cc/</id>
   
   <author>
@@ -21,17 +21,17 @@
     <link href="http://www.gaomingwei.cc/ajax%E8%B7%A8%E5%9F%9F-%E6%95%B4%E7%90%86%E8%87%AA%E7%94%A8%E8%87%AA%E7%94%A8%E7%AF%87.html"/>
     <id>http://www.gaomingwei.cc/ajax跨域-整理自用自用篇.html</id>
     <published>2018-03-11T00:03:32.000Z</published>
-    <updated>2018-03-11T00:18:27.741Z</updated>
+    <updated>2018-03-11T00:19:14.736Z</updated>
     
-    <content type="html"><![CDATA[<p>最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正…</p><p>关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域：</p><p>先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’</p><p>CORS请求原理</p>]]></content>
+    <content type="html"><![CDATA[<p>最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正…</p><p>关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域</p><p>先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’</p><p>CORS请求原理</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正…&lt;/p&gt;
-&lt;p&gt;关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域：&lt;/p&gt;
-&lt;
+&lt;p&gt;关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域&lt;/p&gt;
+&lt;p
       
     
     </summary>
