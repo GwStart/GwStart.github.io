@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="那年匆匆">
 <meta property="og:description" content="Promise是异步编程的一种解决方案，是ES6引进的。 所谓的(Promise)，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。 Promise有两个特性    1.对象的状态不受外界所干扰 pending,fulfi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T05:56:45.793Z">
+<meta property="og:updated_time" content="2018-03-11T06:52:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习笔记(一)Promise">
 <meta name="twitter:description" content="Promise是异步编程的一种解决方案，是ES6引进的。 所谓的(Promise)，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。 Promise有两个特性    1.对象的状态不受外界所干扰 pending,fulfi">
@@ -472,7 +472,15 @@ server.listen(port)
     }
 ```
 </code></pre><p>Promise.all()</p>
-
+<pre><code>将多个Promise实例包装成一个Promise实例
+</code></pre><p>Promise.race()</p>
+<pre><code>将多个Promise实例包装成一个Promise实例
+只要其中一个参数改变其状态就会改变
+</code></pre><p>Promise.resolve()            </p>
+<pre><code>将普通对象转换成Promise对象
+如果参数是一个Promise实例, 那么将不会改变
+如果参数是一个对象， 则会将其转为Promise对象
+</code></pre>
       
     </div>
     
