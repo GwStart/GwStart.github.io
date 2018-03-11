@@ -97,17 +97,17 @@
 
 
 
-<meta name="description" content="最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正… 关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域： 先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’ (同源策略政策及规避的方法)[http://www.ruany">
+<meta name="description" content="最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正… 关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域： 先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’ CORS请求原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ajax跨域,整理自用自用篇">
 <meta property="og:url" content="http://www.gaomingwei.cc/ajax跨域-整理自用自用篇.html">
 <meta property="og:site_name" content="那年匆匆">
-<meta property="og:description" content="最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正… 关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域： 先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’ (同源策略政策及规避的方法)[http://www.ruany">
+<meta property="og:description" content="最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正… 关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域： 先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’ CORS请求原理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T00:15:37.288Z">
+<meta property="og:updated_time" content="2018-03-11T00:18:27.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax跨域,整理自用自用篇">
-<meta name="twitter:description" content="最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正… 关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域： 先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’ (同源策略政策及规避的方法)[http://www.ruany">
+<meta name="twitter:description" content="最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正… 关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域： 先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’ CORS请求原理">
 
 
 
@@ -402,11 +402,9 @@
       
         <p>最近在面试， 碰到过许多的面试题， 今天就来对ajax跨域的几种情况及相关的解决方法整理出来，本人技术有限， 哪里不对 请望指正…</p>
 <p>关于跨域的, 由许多种， ajax请求跨域, 带Cookie跨域, ifame跨域， LocalStorage跨域：</p>
-<pre><code>先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’
-(同源策略政策及规避的方法)[http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html]
+<p>先说说什么是ajax跨域， 所谓的ajax跨域出现的问题，主要是应为浏览器‘同源策略’</p>
+<p>CORS请求原理</p>
 
-CORS请求原理
-</code></pre>
       
     </div>
     
