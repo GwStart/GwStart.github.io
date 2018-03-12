@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gaomingwei.cc/"/>
-  <updated>2018-03-12T08:26:26.255Z</updated>
+  <updated>2018-03-12T09:12:16.000Z</updated>
   <id>http://www.gaomingwei.cc/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习笔记webpack(二)祥记</title>
+    <link href="http://www.gaomingwei.cc/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0webpack-%E4%BA%8C-%E7%A5%A5%E8%AE%B0.html"/>
+    <id>http://www.gaomingwei.cc/学习笔记webpack-二-祥记.html</id>
+    <published>2018-03-12T09:05:17.000Z</published>
+    <updated>2018-03-12T09:12:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>webpack.config.js</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">     <span class="comment">// 入口文件</span></span><br><span class="line">entry: <span class="string">'./src/index.js'</span>,</span><br><span class="line"><span class="comment">// 输出文件</span></span><br><span class="line">output: &#123;</span><br><span class="line">    filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">&#125;,</span><br><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// css 样式加载</span></span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'style-loader'</span>,</span><br><span class="line">                    <span class="string">'css-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 图片加载</span></span><br><span class="line">                test: <span class="regexp">/\.(png|svg|jpg|gif)$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'file-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 加载字体</span></span><br><span class="line">                test: <span class="regexp">/\.(woff|woff2|eot|ttf|otf)$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'file-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 加载数据</span></span><br><span class="line">                test: <span class="regexp">/\.(csv|tsv)$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'css-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// xml文件</span></span><br><span class="line">                test: <span class="regexp">/\.xml$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'xml-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;webpack.config.js&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://www.gaomingwei.cc/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="webpack" scheme="http://www.gaomingwei.cc/tags/webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>学习笔记之webpack配置篇</title>
@@ -128,9 +154,9 @@
     </summary>
     
     
-      <category term="React" scheme="http://www.gaomingwei.cc/tags/React/"/>
-    
       <category term="javascript" scheme="http://www.gaomingwei.cc/tags/javascript/"/>
+    
+      <category term="React" scheme="http://www.gaomingwei.cc/tags/React/"/>
     
   </entry>
   
@@ -457,36 +483,6 @@
       
         &lt;p&gt;NexT主题集成了评论系统，只需要设置相关的属性即可实现功能，其目前支持多说、Disqus、Facebook评论、Hyper评论、网页云跟帖等，其中“多说”是NexT推荐的评论系统，但是多说评论系统不稳定，我们借助第三方实现评论功能&lt;/p&gt;
 &lt;h2 id=&quot;注册友言账号&quot;&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="http://www.gaomingwei.cc/tags/hexo/"/>
-    
-      <category term="美化" scheme="http://www.gaomingwei.cc/tags/%E7%BE%8E%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo之next主题设置首页不显示全文(只显示预览)</title>
-    <link href="http://www.gaomingwei.cc/Hexo%E4%B9%8Bnext%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87-%E5%8F%AA%E6%98%BE%E7%A4%BA%E9%A2%84%E8%A7%88.html"/>
-    <id>http://www.gaomingwei.cc/Hexo之next主题设置首页不显示全文-只显示预览.html</id>
-    <published>2017-09-01T13:55:01.000Z</published>
-    <updated>2017-09-01T13:57:09.010Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>进入hexo博客项目的themes/next目录</li><li>用文本编辑器打开_config.yml文件</li><li>搜索”auto_excerpt”,找到如下部分：</li></ul><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># Automatically Excerpt. Not recommand.</span></span><br><span class="line"><span class="section"># Please use &lt;!-- more --&gt; in the post to control excerpt accurately.</span></span><br><span class="line">auto_excerpt:</span><br><span class="line">enable: false</span><br><span class="line">length: 150</span><br></pre></td></tr></table></figure><ul><li>把enable改为对应的false改为true，然后hexo d -g，再进主页，问题就OK！</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;进入hexo博客项目的themes/next目录&lt;/li&gt;
-&lt;li&gt;用文本编辑器打开_config.yml文件&lt;/li&gt;
-&lt;li&gt;搜索”auto_excerpt”,找到如下部分：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight md&quot;&gt;&lt;
       
     
     </summary>
