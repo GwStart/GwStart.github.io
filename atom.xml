@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gaomingwei.cc/"/>
-  <updated>2018-03-12T09:12:16.000Z</updated>
+  <updated>2018-03-12T10:40:07.606Z</updated>
   <id>http://www.gaomingwei.cc/</id>
   
   <author>
@@ -17,11 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>学习笔记(三)webpack实际开发中的应用</title>
+    <link href="http://www.gaomingwei.cc/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%89-webpack%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8.html"/>
+    <id>http://www.gaomingwei.cc/学习笔记-三-webpack实际开发中的应用.html</id>
+    <published>2018-03-12T10:40:07.000Z</published>
+    <updated>2018-03-12T10:40:07.606Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>学习笔记webpack(二)祥记</title>
     <link href="http://www.gaomingwei.cc/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0webpack-%E4%BA%8C-%E7%A5%A5%E8%AE%B0.html"/>
     <id>http://www.gaomingwei.cc/学习笔记webpack-二-祥记.html</id>
     <published>2018-03-12T09:05:17.000Z</published>
-    <updated>2018-03-12T09:12:16.000Z</updated>
+    <updated>2018-03-12T09:16:16.126Z</updated>
     
     <content type="html"><![CDATA[<p>webpack.config.js</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">     <span class="comment">// 入口文件</span></span><br><span class="line">entry: <span class="string">'./src/index.js'</span>,</span><br><span class="line"><span class="comment">// 输出文件</span></span><br><span class="line">output: &#123;</span><br><span class="line">    filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">&#125;,</span><br><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// css 样式加载</span></span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'style-loader'</span>,</span><br><span class="line">                    <span class="string">'css-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 图片加载</span></span><br><span class="line">                test: <span class="regexp">/\.(png|svg|jpg|gif)$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'file-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 加载字体</span></span><br><span class="line">                test: <span class="regexp">/\.(woff|woff2|eot|ttf|otf)$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'file-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 加载数据</span></span><br><span class="line">                test: <span class="regexp">/\.(csv|tsv)$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'css-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// xml文件</span></span><br><span class="line">                test: <span class="regexp">/\.xml$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'xml-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -457,32 +471,6 @@
       
       
         &lt;h3 id=&quot;1、为什么添加algolia搜索&quot;&gt;&lt;a href=&quot;#1、为什么添加algolia搜索&quot; class=&quot;headerlink&quot; title=&quot;1、为什么添加algolia搜索&quot;&gt;&lt;/a&gt;1、为什么添加algolia搜索&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;是为了可以方
-      
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="http://www.gaomingwei.cc/tags/hexo/"/>
-    
-      <category term="美化" scheme="http://www.gaomingwei.cc/tags/%E7%BE%8E%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo之Next主题添加评论</title>
-    <link href="http://www.gaomingwei.cc/Hexo%E4%B9%8BNext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA.html"/>
-    <id>http://www.gaomingwei.cc/Hexo之Next主题添加评论.html</id>
-    <published>2017-09-01T14:15:58.000Z</published>
-    <updated>2017-09-01T14:22:28.741Z</updated>
-    
-    <content type="html"><![CDATA[<p>NexT主题集成了评论系统，只需要设置相关的属性即可实现功能，其目前支持多说、Disqus、Facebook评论、Hyper评论、网页云跟帖等，其中“多说”是NexT推荐的评论系统，但是多说评论系统不稳定，我们借助第三方实现评论功能</p><h2 id="注册友言账号"><a href="#注册友言账号" class="headerlink" title="注册友言账号"></a>注册友言账号</h2><p>打开<a href="http://www.uyan.cc/" target="_blank" rel="noopener">友言官网</a>，单击“注册”按钮后，按照套路可完成账号注册。</p><h2 id="获取uid"><a href="#获取uid" class="headerlink" title="获取uid"></a>获取uid</h2><p>注册完登录后，在首页单击“后台管理”按钮进入后台界面便可看到自己的用户ID，将其复制下来。</p><h2 id="主题配置文件-设置uid"><a href="#主题配置文件-设置uid" class="headerlink" title="主题配置文件 设置uid"></a>主题配置文件 设置uid</h2><p>打开主题配置文件，在其中找到属性youyan_uid，然后在:后添加之前复制的uid;(自己在配置文件里找)</p><p>然后部署， 评论得以实现。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;NexT主题集成了评论系统，只需要设置相关的属性即可实现功能，其目前支持多说、Disqus、Facebook评论、Hyper评论、网页云跟帖等，其中“多说”是NexT推荐的评论系统，但是多说评论系统不稳定，我们借助第三方实现评论功能&lt;/p&gt;
-&lt;h2 id=&quot;注册友言账号&quot;&gt;
       
     
     </summary>
