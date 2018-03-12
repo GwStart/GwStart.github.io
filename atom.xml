@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gaomingwei.cc/"/>
-  <updated>2018-03-12T07:13:16.730Z</updated>
+  <updated>2018-03-12T08:24:10.539Z</updated>
   <id>http://www.gaomingwei.cc/</id>
   
   <author>
@@ -21,12 +21,25 @@
     <link href="http://www.gaomingwei.cc/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bwebpack%E9%85%8D%E7%BD%AE%E7%AF%87.html"/>
     <id>http://www.gaomingwei.cc/学习笔记之webpack配置篇.html</id>
     <published>2018-03-12T07:13:16.000Z</published>
-    <updated>2018-03-12T07:13:16.730Z</updated>
+    <updated>2018-03-12T08:24:10.539Z</updated>
+    
+    <content type="html"><![CDATA[<p>webpack是现在前端一款很好的文件配置加载工具， 我们自已很轻松使用他构建我们的项目。</p><p>首先我们要在我们的工作环境安装webpack环境依赖</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack --save</span><br></pre></td></tr></table></figure><p>现在来到我们的项目下,新建文件webpack的配置文件webpack.config.js</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.expres = &#123;</span><br><span class="line">    <span class="comment">// 要编译的入口文件</span></span><br><span class="line">    entry: <span class="string">'[name].js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        <span class="comment">// 编译输出文件</span></span><br><span class="line">        filename: <span class="string">'name.js'</span>,</span><br><span class="line">        <span class="comment">// dist 是要输出的文件路径</span></span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>现在我们来到package.json文件里面, 修改以下对应内容</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 编译命令</span><br><span class="line">script: &#123;</span><br><span class="line">    build: 'webpack'</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>现在我们回来命令行输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure><p>OK, 至此一个简单的webpack配置环境就算搭建完成了。</p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;p&gt;webpack是现在前端一款很好的文件配置加载工具， 我们自已很轻松使用他构建我们的项目。&lt;/p&gt;
+&lt;p&gt;首先我们要在我们的工作环境安装webpack环境依赖&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+      
+    
     </summary>
     
+    
+      <category term="工具" scheme="http://www.gaomingwei.cc/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="webpack" scheme="http://www.gaomingwei.cc/tags/webpack/"/>
     
   </entry>
   

@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="工具,webpack," />
 
 
 
@@ -97,14 +97,18 @@
 
 
 
+<meta name="description" content="webpack是现在前端一款很好的文件配置加载工具， 我们自已很轻松使用他构建我们的项目。 首先我们要在我们的工作环境安装webpack环境依赖 1npm install webpack --save 现在来到我们的项目下,新建文件webpack的配置文件webpack.config.js 123456789101112const path = require(&apos;path&apos;);module.exp">
+<meta name="keywords" content="工具,webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习笔记之webpack配置篇">
 <meta property="og:url" content="http://www.gaomingwei.cc/学习笔记之webpack配置篇.html">
 <meta property="og:site_name" content="那年匆匆">
+<meta property="og:description" content="webpack是现在前端一款很好的文件配置加载工具， 我们自已很轻松使用他构建我们的项目。 首先我们要在我们的工作环境安装webpack环境依赖 1npm install webpack --save 现在来到我们的项目下,新建文件webpack的配置文件webpack.config.js 123456789101112const path = require(&apos;path&apos;);module.exp">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T07:13:16.730Z">
+<meta property="og:updated_time" content="2018-03-12T08:24:10.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习笔记之webpack配置篇">
+<meta name="twitter:description" content="webpack是现在前端一款很好的文件配置加载工具， 我们自已很轻松使用他构建我们的项目。 首先我们要在我们的工作环境安装webpack环境依赖 1npm install webpack --save 现在来到我们的项目下,新建文件webpack的配置文件webpack.config.js 123456789101112const path = require(&apos;path&apos;);module.exp">
 
 
 
@@ -407,7 +411,17 @@
       
 
       
-        
+        <p>webpack是现在前端一款很好的文件配置加载工具， 我们自已很轻松使用他构建我们的项目。</p>
+<p>首先我们要在我们的工作环境安装webpack环境依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack --save</span><br></pre></td></tr></table></figure>
+<p>现在来到我们的项目下,新建文件webpack的配置文件webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.expres = &#123;</span><br><span class="line">    <span class="comment">// 要编译的入口文件</span></span><br><span class="line">    entry: <span class="string">'[name].js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        <span class="comment">// 编译输出文件</span></span><br><span class="line">        filename: <span class="string">'name.js'</span>,</span><br><span class="line">        <span class="comment">// dist 是要输出的文件路径</span></span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在我们来到package.json文件里面, 修改以下对应内容</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 编译命令</span><br><span class="line">script: &#123;</span><br><span class="line">    build: 'webpack'</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在我们回来命令行输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p>OK, 至此一个简单的webpack配置环境就算搭建完成了。</p>
+
       
     </div>
     
@@ -421,6 +435,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
+          
+        </div>
       
 
       
@@ -561,7 +583,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
