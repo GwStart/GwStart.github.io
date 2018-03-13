@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gaomingwei.cc/"/>
-  <updated>2018-03-13T08:18:43.812Z</updated>
+  <updated>2018-03-13T09:23:07.877Z</updated>
   <id>http://www.gaomingwei.cc/</id>
   
   <author>
@@ -17,18 +17,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试评论功能</title>
-    <link href="http://www.gaomingwei.cc/%E6%B5%8B%E8%AF%95%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD.html"/>
-    <id>http://www.gaomingwei.cc/测试评论功能.html</id>
-    <published>2018-03-13T07:36:38.000Z</published>
-    <updated>2018-03-13T08:18:43.812Z</updated>
+    <title>学习笔记之(四)webpack热更新</title>
+    <link href="http://www.gaomingwei.cc/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B-%E5%9B%9B-webpack%E7%83%AD%E6%9B%B4%E6%96%B0.html"/>
+    <id>http://www.gaomingwei.cc/学习笔记之-四-webpack热更新.html</id>
+    <published>2018-03-13T09:20:31.000Z</published>
+    <updated>2018-03-13T09:23:07.877Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、Webpack编译期，为需要热更新的 entry 注入热更新代码(EventSource通信)</p><p>2、页面首次打开后，服务端与客户端通过 EventSource 建立通信渠道，把下一次的 hash 返回前端</p><p>3、客户端获取到hash，这个hash将作为下一次请求服务端 hot-update.js 和 hot-update.json的hash</p><p>4、修改页面代码后，Webpack 监听到文件修改后，开始编译，编译完成后，发送 build 消息给客户端</p><p>5、客户端获取到hash，成功后客户端构造hot-update.js script链接，然后插入主文档</p><p>6、hot-update.js 插入成功后，执行hotAPI 的 createRecord 和 reload方法，获取到 Vue 组件的 render方法，重新 render 组件， 继而实现 UI 无刷新更新。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、Webpack编译期，为需要热更新的 entry 注入热更新代码(EventSource通信)&lt;/p&gt;
+&lt;p&gt;2、页面首次打开后，服务端与客户端通过 EventSource 建立通信渠道，把下一次的 hash 返回前端&lt;/p&gt;
+&lt;p&gt;3、客户端获取到hash，这个has
+      
     
     </summary>
     
     
-      <category term="测试" scheme="http://www.gaomingwei.cc/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="webpack" scheme="http://www.gaomingwei.cc/tags/webpack/"/>
     
   </entry>
   
@@ -74,9 +83,9 @@
     </summary>
     
     
-      <category term="工具" scheme="http://www.gaomingwei.cc/tags/%E5%B7%A5%E5%85%B7/"/>
-    
       <category term="webpack" scheme="http://www.gaomingwei.cc/tags/webpack/"/>
+    
+      <category term="工具" scheme="http://www.gaomingwei.cc/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -101,9 +110,9 @@
     </summary>
     
     
-      <category term="工具" scheme="http://www.gaomingwei.cc/tags/%E5%B7%A5%E5%85%B7/"/>
-    
       <category term="webpack" scheme="http://www.gaomingwei.cc/tags/webpack/"/>
+    
+      <category term="工具" scheme="http://www.gaomingwei.cc/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -112,18 +121,9 @@
     <link href="http://www.gaomingwei.cc/%E8%BD%AC%E8%BD%BDPromise-A-%E8%A7%84%E8%8C%83.html"/>
     <id>http://www.gaomingwei.cc/转载Promise-A-规范.html</id>
     <published>2018-03-11T09:43:34.000Z</published>
-    <updated>2018-03-13T08:19:13.169Z</updated>
-    
-    <content type="html"><![CDATA[<p><div id="container"></div></p><p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({  id: 'location.href', // 可选。默认为 location.href  owner: 'GwStart',  repo: 'https://github.com/GwStart/blog/issues',  oauth: {    client_id: '81fb508ddfbc0711f777',    client_secret: '40fab97776336fec6f429c306e9f9646e2a0c1c5',  },})gitment.render('container')</script>]]></content>
+    <updated>2018-03-13T09:21:18.114Z</updated>
     
     <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://imsun.github.io/gitment/style/default.css&quot;&gt;&lt;/p&gt;
-&lt;script src=&quot;https
-      
     
     </summary>
     
@@ -201,9 +201,9 @@
     </summary>
     
     
-      <category term="javascript" scheme="http://www.gaomingwei.cc/tags/javascript/"/>
-    
       <category term="React" scheme="http://www.gaomingwei.cc/tags/React/"/>
+    
+      <category term="javascript" scheme="http://www.gaomingwei.cc/tags/javascript/"/>
     
   </entry>
   
