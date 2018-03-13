@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gaomingwei.cc/"/>
-  <updated>2018-03-13T09:23:07.877Z</updated>
+  <updated>2018-03-13T11:09:49.074Z</updated>
   <id>http://www.gaomingwei.cc/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习笔记之(五)webpack实现原理</title>
+    <link href="http://www.gaomingwei.cc/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B-%E4%BA%94-webpack%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.html"/>
+    <id>http://www.gaomingwei.cc/学习笔记之-五-webpack实现原理.html</id>
+    <published>2018-03-13T11:09:49.000Z</published>
+    <updated>2018-03-13T11:09:49.074Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>学习笔记之(四)webpack热更新</title>
@@ -83,9 +97,9 @@
     </summary>
     
     
-      <category term="webpack" scheme="http://www.gaomingwei.cc/tags/webpack/"/>
-    
       <category term="工具" scheme="http://www.gaomingwei.cc/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="webpack" scheme="http://www.gaomingwei.cc/tags/webpack/"/>
     
   </entry>
   
@@ -110,9 +124,9 @@
     </summary>
     
     
-      <category term="webpack" scheme="http://www.gaomingwei.cc/tags/webpack/"/>
-    
       <category term="工具" scheme="http://www.gaomingwei.cc/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="webpack" scheme="http://www.gaomingwei.cc/tags/webpack/"/>
     
   </entry>
   
@@ -463,30 +477,6 @@
     
     
       <category term="web前端资料" scheme="http://www.gaomingwei.cc/tags/web%E5%89%8D%E7%AB%AF%E8%B5%84%E6%96%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(转)Git查看、删除、重命名远程分支和tag</title>
-    <link href="http://www.gaomingwei.cc/Git%E6%9F%A5%E7%9C%8B%E3%80%81%E5%88%A0%E9%99%A4%E3%80%81%E9%87%8D%E5%91%BD%E5%90%8D%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%92%8Ctag.html"/>
-    <id>http://www.gaomingwei.cc/Git查看、删除、重命名远程分支和tag.html</id>
-    <published>2017-09-02T07:59:50.000Z</published>
-    <updated>2017-09-02T08:24:52.631Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h3><p>加上-a参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line"> master</span><br><span class="line"> remote</span><br><span class="line"> tungway</span><br><span class="line"> v1.52</span><br><span class="line">* zrong</span><br><span class="line"> remotes/origin/master</span><br><span class="line"> remotes/origin/tungway</span><br><span class="line"> remotes/origin/v1.52</span><br><span class="line"> remotes/origin/zrong</span><br></pre></td></tr></table></figure><h3 id="删除远程分支和-tag"><a href="#删除远程分支和-tag" class="headerlink" title="删除远程分支和 tag"></a>删除远程分支和 tag</h3><p>在 Git v1.7.0 之后，可以使用这种语法删除远程分支：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete &lt;branchName&gt;</span><br></pre></td></tr></table></figure><p>删除 tag 这么用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete tag &lt;tagname&gt;</span><br></pre></td></tr></table></figure><p>否则，可以使用这种语法，推送一个空分支到远程分支，其实就相当于删除远程分支：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :&lt;branchName&gt;</span><br></pre></td></tr></table></figure><p>这是删除 tag 的方法，推送一个空 tag 到远程 tag：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -d &lt;tagname&gt;</span><br><span class="line">git push origin :refs/tags/&lt;tagname&gt;</span><br></pre></td></tr></table></figure><p>两种语法作用完全相同。</p><h3 id="删除不存在对应远程分支的本地分支"><a href="#删除不存在对应远程分支的本地分支" class="headerlink" title="删除不存在对应远程分支的本地分支"></a>删除不存在对应远程分支的本地分支</h3><p>假设这样一种情况：</p><pre><code>- 我创建了本地分支 b1 并 pull 到远程分支 origin/b1；- 其他人在本地使用 fetch 或 pull 创建了本地的 b1 分支；- 我删除了 origin/b1 远程分支；- 其他人再次执行 fetch 或者 pull 并不会删除这个他们本地的 b1 分支，运行 git branch -a 也不能看出这个 branch 被删除了，如何处理？</code></pre><p>使用下面的代码查看 b1 的状态：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git remote show origin</span><br><span class="line">* remote origin</span><br><span class="line"> Fetch URL: git@github.com:xxx/xxx.git</span><br><span class="line"> Push  URL: git@github.com:xxx/xxx.git</span><br><span class="line"> HEAD branch: master</span><br><span class="line"> Remote branches:</span><br><span class="line">   master                 tracked</span><br><span class="line">   refs/remotes/origin/b1 stale (use &apos;git remote prune&apos; to remove)</span><br><span class="line">Local branch configured for &apos;git pull&apos;:</span><br><span class="line">   master merges with remote master</span><br><span class="line">Local ref configured for &apos;git push&apos;:</span><br><span class="line">   master pushes to master (up to date)</span><br></pre></td></tr></table></figure><p>这时候能够看到 b1 是 stale 的，使用 git remote prune origin 可以将其从本地版本库中去除。</p><p>更简单的方法是使用这个命令，它在 fetch 之后删除掉没有与远程分支对应的本地分支：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch -p</span><br></pre></td></tr></table></figure><h3 id="重命名远程分支"><a href="#重命名远程分支" class="headerlink" title="重命名远程分支"></a>重命名远程分支</h3><p>在 git 中重命名远程分支，其实就是先删除远程分支，然后重命名本地分支，再重新提交一个远程分支。</p><p>例如下面的例子中，我需要把 devel 分支重命名为 develop 分支：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -av</span><br><span class="line">* devel                             752bb84 Merge pull request #158 from Gwill/devel</span><br><span class="line">master                            53b27b8 Merge pull request #138 from tdlrobin/master</span><br><span class="line">zrong                             2ae98d8 modify CCFileUtils, export getFileData</span><br><span class="line">remotes/origin/HEAD               -&gt; origin/master</span><br><span class="line">remotes/origin/add_build_script   d4a8c4f Merge branch &apos;master&apos; into add_build_script</span><br><span class="line">remotes/origin/devel              752bb84 Merge pull request #158 from Gwill/devel</span><br><span class="line">remotes/origin/devel_qt51         62208f1 update .gitignore</span><br><span class="line">remotes/origin/master             53b27b8 Merge pull request #138 from tdlrobin/master</span><br><span class="line">remotes/origin/zrong              2ae98d8 modify CCFileUtils, export getFileData</span><br></pre></td></tr></table></figure><p>删除远程分支：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git push --delete origin devel</span><br><span class="line">To git@github.com:zrong/quick-cocos2d-x.git</span><br><span class="line">- [deleted]         devel</span><br></pre></td></tr></table></figure><p>重命名本地分支：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -m devel develop</span><br></pre></td></tr></table></figure><p>推送本地分支：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin develop</span><br><span class="line">Counting objects: 92, done.</span><br><span class="line">Delta compression using up to 4 threads.</span><br><span class="line">Compressing objects: 100% (48/48), done.</span><br><span class="line">Writing objects: 100% (58/58), 1.38 MiB, done.</span><br><span class="line">Total 58 (delta 34), reused 12 (delta 5)</span><br><span class="line">To git@github.com:zrong/quick-cocos2d-x.git</span><br><span class="line">* [new branch]      develop -&gt; develop</span><br></pre></td></tr></table></figure><p>然而，在 github 上操作的时候，我在删除远程分支时碰到这个错误：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git push --delete origin devel</span><br><span class="line">remote: error: refusing to delete the current branch: refs/heads/devel</span><br><span class="line">To git@github.com:zrong/quick-cocos2d-x.git</span><br><span class="line">! [remote rejected] devel (deletion of the current branch prohibited)</span><br><span class="line">error: failed to push some refs to &apos;git@github.com:zrong/quick-cocos2d-x.git&apos;</span><br></pre></td></tr></table></figure><p>这是由于在 github 中，devel 是项目的默认分支。要解决此问题，这样操作：</p><pre><code>- 进入 github 中该项目的 Settings 页面；- 设置 Default Branch 为其他的分支（例如：master）；- 重新执行删除远程分支命令。</code></pre><h3 id="把本地-tag-推送到远程"><a href="#把本地-tag-推送到远程" class="headerlink" title="把本地 tag 推送到远程"></a>把本地 tag 推送到远程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --tags</span><br></pre></td></tr></table></figure><h3 id="获取远程-tag"><a href="#获取远程-tag" class="headerlink" title="获取远程 tag"></a>获取远程 tag</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin tag &lt;tagname&gt;</span><br></pre></td></tr></table></figure><h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul><li><a href="https://makandracards.com/makandra/621-git-delete-a-branch-local-or-remote" target="_blank" rel="noopener">https://makandracards.com/makandra/621-git-delete-a-branch-local-or-remote</a></li><li><a href="http://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-both-locally-and-in-github" target="_blank" rel="noopener">http://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-both-locally-and-in-github</a></li><li><a href="http://www.cnblogs.com/deepnighttwo/archive/2011/06/18/2084438.html" target="_blank" rel="noopener">http://www.cnblogs.com/deepnighttwo/archive/2011/06/18/2084438.html</a></li><li><a href="http://stackoverflow.com/questions/14040754/deleting-remote-master-branch-refused-due-to-being-current-branch" target="_blank" rel="noopener">http://stackoverflow.com/questions/14040754/deleting-remote-master-branch-refused-due-to-being-current-branch</a></li><li><p><a href="http://weli.iteye.com/blog/1441582" target="_blank" rel="noopener">http://weli.iteye.com/blog/1441582</a></p><p><a href="https://blog.zengrong.net/post/1746.html" target="_blank" rel="noopener">原文地址</a></p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;查看远程分支&quot;&gt;&lt;a href=&quot;#查看远程分支&quot; class=&quot;headerlink&quot; title=&quot;查看远程分支&quot;&gt;&lt;/a&gt;查看远程分支&lt;/h3&gt;&lt;p&gt;加上-a参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）：&lt;/p&gt;
-&lt;figure 
-      
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="http://www.gaomingwei.cc/tags/Git/"/>
     
   </entry>
   
