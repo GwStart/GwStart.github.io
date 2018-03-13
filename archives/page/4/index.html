@@ -852,6 +852,31 @@
 
 
 
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: document.location.href, 
+                   owner: 'GwStart',
+                   repo: 'https://github.com/GwStart/blog/issues',
+                   oauth: {
+                       client_id: '81fb508ddfbc0711f777',
+                       client_secret: '40fab97776336fec6f429c306e9f9646e2a0c1c5',
+                   }});
+               gitment.render('gitment-container');
+           }
+       </script>
+   
+
+
   
 
   <script type="text/javascript">

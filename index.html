@@ -406,18 +406,8 @@
       
         
           
-          本文未测试文章
-
-
-
-
-var gitment = new Gitment({
-  id: 'location.href', // 可选。默认为 location.href
-  owner: 'GwStart',
-  repo: 'http://gaomingwei.cc',
-  oauth: {
-
-          ...
+          
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/测试评论功能.html#more" rel="contents">
@@ -973,9 +963,8 @@ var gitment = new Gitment({
 var gitment = new Gitment({
   id: 'location.href', // 可选。默认为 location.href
   owner: 'GwStart',
-  repo: 'http://gaomingwei.cc',
-  oauth: {
-    clie
+  repo: 'https://github.com/GwStart/blog/issues',
+ 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2033,6 +2022,31 @@ var gitment = new Gitment({
 
 
 
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: document.location.href, 
+                   owner: 'GwStart',
+                   repo: 'https://github.com/GwStart/blog/issues',
+                   oauth: {
+                       client_id: '81fb508ddfbc0711f777',
+                       client_secret: '40fab97776336fec6f429c306e9f9646e2a0c1c5',
+                   }});
+               gitment.render('gitment-container');
+           }
+       </script>
+   
 
 
   

@@ -97,18 +97,15 @@
 
 
 
-<meta name="description" content="本文未测试文章     var gitment = new Gitment({   id: &apos;location.href&apos;, // 可选。默认为 location.href   owner: &apos;GwStart&apos;,   repo: &apos;http://gaomingwei.cc&apos;,   oauth: {     client_id: &apos;81fb508ddfbc0711f777&apos;,     client_">
 <meta name="keywords" content="测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="测试评论功能">
 <meta property="og:url" content="http://www.gaomingwei.cc/测试评论功能.html">
 <meta property="og:site_name" content="那年匆匆">
-<meta property="og:description" content="本文未测试文章     var gitment = new Gitment({   id: &apos;location.href&apos;, // 可选。默认为 location.href   owner: &apos;GwStart&apos;,   repo: &apos;http://gaomingwei.cc&apos;,   oauth: {     client_id: &apos;81fb508ddfbc0711f777&apos;,     client_">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T07:38:50.243Z">
+<meta property="og:updated_time" content="2018-03-13T08:18:43.812Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="测试评论功能">
-<meta name="twitter:description" content="本文未测试文章     var gitment = new Gitment({   id: &apos;location.href&apos;, // 可选。默认为 location.href   owner: &apos;GwStart&apos;,   repo: &apos;http://gaomingwei.cc&apos;,   oauth: {     client_id: &apos;81fb508ddfbc0711f777&apos;,     client_">
 
 
 
@@ -411,24 +408,7 @@
       
 
       
-        <p>本文未测试文章</p>
-<p><div id="container"></div></p>
-<p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p>
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: 'location.href', // 可选。默认为 location.href
-  owner: 'GwStart',
-  repo: 'http://gaomingwei.cc',
-  oauth: {
-    client_id: '81fb508ddfbc0711f777',
-    client_secret: '40fab97776336fec6f429c306e9f9646e2a0c1c5',
-  },
-})
-gitment.render('container')
-</script>
-
-
+        
       
     </div>
     
@@ -846,6 +826,31 @@ var jiathis_config={
 
 
 
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: document.location.href, 
+                   owner: 'GwStart',
+                   repo: 'https://github.com/GwStart/blog/issues',
+                   oauth: {
+                       client_id: '81fb508ddfbc0711f777',
+                       client_secret: '40fab97776336fec6f429c306e9f9646e2a0c1c5',
+                   }});
+               gitment.render('gitment-container');
+           }
+       </script>
+   
 
 
   
