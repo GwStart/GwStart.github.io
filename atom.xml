@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gaomingwei.cc/"/>
-  <updated>2018-03-13T04:14:28.538Z</updated>
+  <updated>2018-03-13T07:37:03.245Z</updated>
   <id>http://www.gaomingwei.cc/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试评论功能</title>
+    <link href="http://www.gaomingwei.cc/%E6%B5%8B%E8%AF%95%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD.html"/>
+    <id>http://www.gaomingwei.cc/测试评论功能.html</id>
+    <published>2018-03-13T07:36:38.000Z</published>
+    <updated>2018-03-13T07:37:03.245Z</updated>
+    
+    <content type="html"><![CDATA[<p><div id="container"></div></p><p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({  id: 'location.href', // 可选。默认为 location.href  owner: 'GwStart',  repo: 'http://gaomingwei.cc',  oauth: {    client_id: '81fb508ddfbc0711f777',    client_secret: '40fab97776336fec6f429c306e9f9646e2a0c1c5',  },})gitment.render('container')</script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://imsun.github.io/gitment/style/default.css&quot;&gt;&lt;/p&gt;
+&lt;script src=&quot;https
+      
+    
+    </summary>
+    
+    
+      <category term="测试" scheme="http://www.gaomingwei.cc/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>学习笔记(三)webpack实际开发中的应用</title>
@@ -96,7 +121,7 @@
     <link href="http://www.gaomingwei.cc/%E8%BD%AC%E8%BD%BDPromise-A-%E8%A7%84%E8%8C%83.html"/>
     <id>http://www.gaomingwei.cc/转载Promise-A-规范.html</id>
     <published>2018-03-11T09:43:34.000Z</published>
-    <updated>2018-03-13T07:30:02.257Z</updated>
+    <updated>2018-03-13T07:36:13.312Z</updated>
     
     <content type="html"><![CDATA[<p><div id="container"></div></p><p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({  id: 'location.href', // 可选。默认为 location.href  owner: 'GwStart',  repo: 'http://gaomingwei.cc',  oauth: {    client_id: '81fb508ddfbc0711f777',    client_secret: '40fab97776336fec6f429c306e9f9646e2a0c1c5',  },})gitment.render('container')</script>]]></content>
     
@@ -185,9 +210,9 @@
     </summary>
     
     
-      <category term="javascript" scheme="http://www.gaomingwei.cc/tags/javascript/"/>
-    
       <category term="React" scheme="http://www.gaomingwei.cc/tags/React/"/>
+    
+      <category term="javascript" scheme="http://www.gaomingwei.cc/tags/javascript/"/>
     
   </entry>
   
@@ -471,31 +496,6 @@
     
     
       <category term="Git" scheme="http://www.gaomingwei.cc/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo之Next主题添加 algolia 搜索</title>
-    <link href="http://www.gaomingwei.cc/Hexo%E4%B9%8BNext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD.html"/>
-    <id>http://www.gaomingwei.cc/Hexo之Next主题添加搜索功能.html</id>
-    <published>2017-09-02T04:16:49.000Z</published>
-    <updated>2017-09-04T09:07:08.493Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1、为什么添加algolia搜索"><a href="#1、为什么添加algolia搜索" class="headerlink" title="1、为什么添加algolia搜索"></a>1、为什么添加algolia搜索</h3><pre><code>是为了可以方便的查找所需文章，提供便利！</code></pre><p>  命令安装algolia插件</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-algolia</span><br></pre></td></tr></table></figure><h3 id="2、添加效果"><a href="#2、添加效果" class="headerlink" title="2、添加效果"></a>2、添加效果</h3><pre><code>这里效果图就没有了（暂时）</code></pre><h3 id="3、去algolia-注册自己的账号，完成注册后，创建项目-index-name-注意-，打开打开API-Keys页面，里面的信息等会需要写到hexo的配置文件中。"><a href="#3、去algolia-注册自己的账号，完成注册后，创建项目-index-name-注意-，打开打开API-Keys页面，里面的信息等会需要写到hexo的配置文件中。" class="headerlink" title="3、去algolia 注册自己的账号，完成注册后，创建项目(index_name 注意)，打开打开API Keys页面，里面的信息等会需要写到hexo的配置文件中。"></a>3、去algolia 注册自己的账号，完成注册后，创建项目(index_name 注意)，打开打开API Keys页面，里面的信息等会需要写到hexo的配置文件中。</h3><p>在根目录的站点配置文件_config.yml<br>中加入如下配置，参照上图的各种key值</p><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">algolia:</span><br><span class="line">  appId: 'appid'</span><br><span class="line">  apiKey: 'apiKey'</span><br><span class="line">  adminApiKey: 'adminApiKey'</span><br><span class="line">  indexName: '上面填写的index名'</span><br><span class="line">  chunkSize: 5000</span><br><span class="line">  fields:</span><br><span class="line"><span class="code">    - title</span></span><br><span class="line"><span class="code">    - slug</span></span><br><span class="line"><span class="code">    - path</span></span><br><span class="line"><span class="code">    - content:strip</span></span><br></pre></td></tr></table></figure><p>在主题Next目录下找到配置文件，修改里面的 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure><p>在git bash中执行(注意每次在写新文章时都要提交index)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure><p> 如下则表示成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO ...</span><br><span class="line">...</span><br><span class="line">INFO ...</span><br></pre></td></tr></table></figure><p>好了， 现在我们已经将代码提交到algolia里面了，</p><p>如果无法提交成功，先执行hexo clean即可。<br>在\themes\next下找到_config.yml，找到如下内容，将enable修改为true，labels修改为自己需要的</p><p>在themes\next\layout_partials中找到header.swig，找到以下代码并修改</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav class=&quot;site-nav&quot;&gt;</span><br><span class="line">  &lt;!-- 添加  theme.algolia_search.enable --&gt;</span><br><span class="line">  &#123;% set hasSearch = theme.swiftype_key || theme.algolia_search.enable || theme.tinysou_Key || config.search %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &#123;% if theme.menu %&#125;</span><br><span class="line">    &lt;ul id=&quot;menu&quot; class=&quot;menu&quot;&gt;</span><br><span class="line">      &#123;% for name, path in theme.menu %&#125;</span><br><span class="line">        &#123;% set itemName = name.toLowerCase() %&#125;</span><br><span class="line">        &lt;li class=&quot;menu-item menu-item-&#123;&#123; itemName &#125;&#125;&quot;&gt;</span><br><span class="line">          &lt;a href=&quot;&#123;&#123; url_for(path) &#125;&#125;&quot; rel=&quot;section&quot;&gt;</span><br><span class="line">            &#123;% if theme.menu_icons.enable %&#125;</span><br><span class="line">              &lt;i class=&quot;menu-item-icon fa fa-fw fa-&#123;&#123;theme.menu_icons[itemName] | default(&apos;question-circle&apos;) | lower &#125;&#125;&quot;&gt;&lt;/i&gt; </span><br><span class="line"></span><br><span class="line">            &#123;% endif %&#125;</span><br><span class="line">            &#123;&#123; __(&apos;menu.&apos; + itemName) &#125;&#125;</span><br><span class="line">          &lt;/a&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &#123;% if hasSearch %&#125;</span><br><span class="line">    &lt;li class=&quot;menu-item menu-item-search&quot;&gt;</span><br><span class="line">      &#123;% if theme.swiftype_key %&#125;</span><br><span class="line">        &lt;a href=&quot;javascript:;&quot; class=&quot;st-search-show-outputs&quot;&gt;</span><br><span class="line">      &#123;% elseif config.search %&#125;</span><br><span class="line">        &lt;a href=&quot;javascript:;&quot; class=&quot;popup-trigger&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 添加 开始 --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      &#123;% elseif theme.algolia %&#125;</span><br><span class="line">        &lt;a href=&quot;javascript:;&quot; class=&quot;popup-trigger&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 添加 结束 --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line">        &#123;% if theme.menu_icons.enable %&#125;</span><br><span class="line">          &lt;i class=&quot;menu-item-icon fa fa-search fa-fw&quot;&gt;&lt;/i&gt; &lt;br /&gt;</span><br><span class="line">        &#123;% endif %&#125;</span><br><span class="line">        &#123;&#123; __(&apos;menu.search&apos;) &#125;&#125;</span><br><span class="line">      &lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &#123;% if hasSearch %&#125;</span><br><span class="line">    &lt;div class=&quot;site-search&quot;&gt;</span><br><span class="line">      &#123;% include &apos;search.swig&apos; %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/nav&gt;</span><br></pre></td></tr></table></figure><p>好了， 现在就完成添加了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;1、为什么添加algolia搜索&quot;&gt;&lt;a href=&quot;#1、为什么添加algolia搜索&quot; class=&quot;headerlink&quot; title=&quot;1、为什么添加algolia搜索&quot;&gt;&lt;/a&gt;1、为什么添加algolia搜索&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;是为了可以方
-      
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="http://www.gaomingwei.cc/tags/hexo/"/>
-    
-      <category term="美化" scheme="http://www.gaomingwei.cc/tags/%E7%BE%8E%E5%8C%96/"/>
     
   </entry>
   
