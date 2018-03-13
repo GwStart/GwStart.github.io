@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.gaomingwei.cc/"/>
-  <updated>2018-03-13T07:37:03.245Z</updated>
+  <updated>2018-03-13T07:38:50.243Z</updated>
   <id>http://www.gaomingwei.cc/</id>
   
   <author>
@@ -21,17 +21,18 @@
     <link href="http://www.gaomingwei.cc/%E6%B5%8B%E8%AF%95%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD.html"/>
     <id>http://www.gaomingwei.cc/测试评论功能.html</id>
     <published>2018-03-13T07:36:38.000Z</published>
-    <updated>2018-03-13T07:37:03.245Z</updated>
+    <updated>2018-03-13T07:38:50.243Z</updated>
     
-    <content type="html"><![CDATA[<p><div id="container"></div></p><p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({  id: 'location.href', // 可选。默认为 location.href  owner: 'GwStart',  repo: 'http://gaomingwei.cc',  oauth: {    client_id: '81fb508ddfbc0711f777',    client_secret: '40fab97776336fec6f429c306e9f9646e2a0c1c5',  },})gitment.render('container')</script>]]></content>
+    <content type="html"><![CDATA[<p>本文未测试文章</p><p><div id="container"></div></p><p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({  id: 'location.href', // 可选。默认为 location.href  owner: 'GwStart',  repo: 'http://gaomingwei.cc',  oauth: {    client_id: '81fb508ddfbc0711f777',    client_secret: '40fab97776336fec6f429c306e9f9646e2a0c1c5',  },})gitment.render('container')</script>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;&lt;/p&gt;
+        &lt;p&gt;本文未测试文章&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://imsun.github.io/gitment/style/default.css&quot;&gt;&lt;/p&gt;
-&lt;script src=&quot;https
+&lt;sc
       
     
     </summary>
