@@ -96,9 +96,18 @@
     <link href="http://www.gaomingwei.cc/%E8%BD%AC%E8%BD%BDPromise-A-%E8%A7%84%E8%8C%83.html"/>
     <id>http://www.gaomingwei.cc/转载Promise-A-规范.html</id>
     <published>2018-03-11T09:43:34.000Z</published>
-    <updated>2018-03-12T07:04:30.916Z</updated>
+    <updated>2018-03-13T07:30:02.257Z</updated>
+    
+    <content type="html"><![CDATA[<p><div id="container"></div></p><p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({  id: 'location.href', // 可选。默认为 location.href  owner: 'GwStart',  repo: 'http://gaomingwei.cc',  oauth: {    client_id: '81fb508ddfbc0711f777',    client_secret: '40fab97776336fec6f429c306e9f9646e2a0c1c5',  },})gitment.render('container')</script>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://imsun.github.io/gitment/style/default.css&quot;&gt;&lt;/p&gt;
+&lt;script src=&quot;https
+      
     
     </summary>
     
