@@ -97,14 +97,17 @@
 
 
 
+<meta name="description" content="现在我们来到我们的开发目录, 那么实际开发中吧我们的小技巧告诉大家 一、source map    在实际项目开发中，我们会常常遇到把几个文件(a.js, b.js, c.js)打包为一个bundle.js文件， 时常会遇到其中一个文件打包出错了,那么我们很难定位到错误位置，为了更加容易地指认错误和警告， Javascript提供的source map功能，将编译后的代码映射回原始源代码。如果一个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习笔记(三)webpack实际开发中的应用">
 <meta property="og:url" content="http://www.gaomingwei.cc/学习笔记-三-webpack实际开发中的应用.html">
 <meta property="og:site_name" content="那年匆匆">
+<meta property="og:description" content="现在我们来到我们的开发目录, 那么实际开发中吧我们的小技巧告诉大家 一、source map    在实际项目开发中，我们会常常遇到把几个文件(a.js, b.js, c.js)打包为一个bundle.js文件， 时常会遇到其中一个文件打包出错了,那么我们很难定位到错误位置，为了更加容易地指认错误和警告， Javascript提供的source map功能，将编译后的代码映射回原始源代码。如果一个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T10:40:07.606Z">
+<meta property="og:updated_time" content="2018-03-13T04:14:28.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习笔记(三)webpack实际开发中的应用">
+<meta name="twitter:description" content="现在我们来到我们的开发目录, 那么实际开发中吧我们的小技巧告诉大家 一、source map    在实际项目开发中，我们会常常遇到把几个文件(a.js, b.js, c.js)打包为一个bundle.js文件， 时常会遇到其中一个文件打包出错了,那么我们很难定位到错误位置，为了更加容易地指认错误和警告， Javascript提供的source map功能，将编译后的代码映射回原始源代码。如果一个">
 
 
 
@@ -407,7 +410,20 @@
       
 
       
-        
+        <p>现在我们来到我们的开发目录, 那么实际开发中吧我们的小技巧告诉大家</p>
+<p>一、source map<br>    在实际项目开发中，我们会常常遇到把几个文件(a.js, b.js, c.js)打包为一个bundle.js文件， 时常会遇到其中一个文件打包出错了,那么我们很难定位到错误位置，<br>为了更加容易地指认错误和警告， Javascript提供的source map功能，将编译后的代码映射回原始源代码。如果一个错误来自于 b.js，source map 就会明确的告诉你。</p>
+<p>二、自动化构建工具<br>    webpack watch model<br>    webpack dev server<br>    webpack dev middleware</p>
+<pre><code>(1).观察者模式
+    实时监控代码，一旦代码被修改将自动重新编译
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="string">"script"</span>: &#123;</span><br><span class="line">    <span class="string">"watch"</span>: <span class="string">"webpack --watch"</span>   </span><br><span class="line">    &#125;</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">(2). 使用webpack-dev-server</span></span><br><span class="line"><span class="string">    这个模块提供了一个简单的web服务,并且能实时重新加载</span></span><br></pre></td></tr></table></figure>
+
+    npm install --save-dev webpack-dev-server
+    ```   
+
+(3). 使用webpack-dev-middleware
+    他可以把webpack处理后的文件传递给一个服务器，也可以作为一个独立的模块使用.    
+</code></pre>
       
     </div>
     
